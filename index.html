@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Image Prompts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 20px;
+    }
+    h1 {
+      color: #38bdf8;
+    }
+    .prompt {
+      background: #1e293b;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 8px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎨 AI Image Prompts</h1>
+
+<div class="prompt">
+  <b>Cyberpunk Girl</b>
+  <p>A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k</p>
+  <button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">
+    Kopyala
+  </button>
+</div>
+
+<div class="prompt">
+  <b>Fantasy Castle</b>
+  <p>A fantasy castle on a floating island, epic, magical atmosphere</p>
+  <button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText)">
+    Kopyala
+  </button>
+</div>
+
+</body>
+</html>
