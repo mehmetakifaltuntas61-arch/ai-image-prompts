@@ -11,8 +11,10 @@
   --card:#141a2b;
   --gold:#d4af37;
   --accent:#38bdf8;
-  --soft:#a8b2d1;
+  --soft:#94a3b8;
 }
+
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -24,41 +26,40 @@ body{
 
 header{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:60px;
 }
 
 header h1{
+  font-size:42px;
   color:var(--gold);
-  font-size:38px;
-  letter-spacing:1px;
+  margin:0;
 }
 
-header span{
-  display:block;
-  margin-top:12px;
-  font-size:32px;
+header .owner{
+  margin-top:10px;
+  font-size:36px;
   font-weight:900;
   color:#ff4d4d;
+  letter-spacing:2px;
 }
 
 section{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
 }
 
 h2{
-  margin:50px 0 20px;
+  margin:70px 0 30px;
   color:var(--accent);
-  border-left:4px solid var(--gold);
-  padding-left:14px;
+  border-left:5px solid var(--gold);
+  padding-left:15px;
 }
 
 .prompt{
   background:var(--card);
-  padding:22px;
-  border-radius:16px;
-  margin-bottom:22px;
-  box-shadow:0 10px 30px rgba(0,0,0,.45);
+  padding:26px;
+  border-radius:20px;
+  margin-bottom:28px;
 }
 
 .prompt h3{
@@ -66,23 +67,36 @@ h2{
   color:var(--gold);
 }
 
-.prompt p{
+.prompt-text{
   white-space:pre-line;
-  line-height:1.6;
-  color:#e5e7eb;
+  line-height:1.7;
+  max-height:9.8em;
+  overflow:hidden;
+  transition:max-height .4s ease;
+}
+
+.prompt-text.expanded{
+  max-height:4000px;
+}
+
+.show-more{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--accent);
+  cursor:pointer;
 }
 
 .actions{
-  margin-top:14px;
+  margin-top:16px;
   display:flex;
   gap:14px;
   align-items:center;
 }
 
 button{
-  padding:9px 18px;
+  padding:10px 22px;
   border:none;
-  border-radius:10px;
+  border-radius:14px;
   cursor:pointer;
   background:var(--gold);
   color:#000;
@@ -95,9 +109,10 @@ button{
 }
 
 footer{
+  margin-top:90px;
   text-align:center;
-  margin-top:70px;
   color:#64748b;
+  font-size:14px;
 }
 </style>
 </head>
@@ -106,38 +121,26 @@ footer{
 
 <header>
   <h1>AI Prompt Studio</h1>
-  <span>M.AKİF</span>
+  <div class="owner">M.AKİF</div>
 </header>
 
 <section>
 
-<h2>🎬 Cinematic & Editorial Prompts</h2>
+<h2>🎬 Cinematic & Editorial</h2>
 
 <div class="prompt">
-<h3>Cinematic Horse Editorial – Monochrome Leica</h3>
-<p id="p1">
-A young man, 180 cm tall and slender, is shown riding a strong, black-haired horse, viewed from a
-slight front angle (three-quarter front view). Behind him are sweet, beautiful trees and sand on the
-ground. The camera is positioned to look slightly down on the horse as it moves forward, creating a
-powerful, confident cinematic atmosphere. The man looks slightly to the side with a calm and
-fearless expression, his face fully visible.
-He sits upright and balanced, holding the reins naturally while leaning slightly into the horse's
-forward movement. Muscular and imposing, the thick, wavy-maned horse is captured mid-stride,
-emphasizing its power and speed.
-He wears a large black shirt with the top buttons open, black fabric trousers, a leather belt, and
-clean black classic shoes. A thin silver wristwatch reflects the light on his wrist, and sleek
-rectangular sunglasses with narrow frames complete his modern and stylish look.
-The face must be 100% preserved as provided. The facial structure, proportions, skin texture, eye
-shape, nose, lips, jawline, expression, or identity must not be altered. No beautification, face
-replacement, softening, or any changes to facial features should be made.
-In the background, there is strong motion blur with striped blurred lines to clearly show the forward
-movement, but the subject and the horse remain sharp and in focus. The dust particles around the
-horse's legs and the slight blur enhance the realism and dynamic speed.
-Image taken with Leica M11
-Inspired by monochrome, this filter has a vintage cinematic aesthetic with rich black-and-white
-tones, deep contrast, dramatic shadows, soft highlights, and a timeless editorial feel. Add fine film
-grain and cinematic depth of field for a high-quality fashion photography look.
-</p>
+<h3>Cinematic Horse Editorial (B&W)</h3>
+<div id="p1" class="prompt-text">
+A young man riding a strong black horse, three-quarter front view.
+Sweet trees in the background, sandy ground.
+Confident posture, face fully visible.
+Black shirt, black trousers, classic shoes.
+Thin silver watch, narrow sunglasses.
+Horse mid-stride, flowing mane.
+Leica M11, cinematic black and white, film grain.
+Face identity must be 100% preserved.
+</div>
+<div class="show-more" onclick="toggleText(this,'p1')">Devamını göster</div>
 <div class="actions">
 <button onclick="copyPrompt('p1',this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
@@ -145,48 +148,36 @@ grain and cinematic depth of field for a high-quality fashion photography look.
 </div>
 
 <div class="prompt">
-<h3>High-Angle Street Style Editorial with SUV</h3>
-<p id="p2">
-High-angle editorial street-style photograph, taken from a balcony/upper-floor viewpoint looking
-down at a stylish man standing on sunlit asphalt.
-Composition: subject centered slightly left, full body visible, lots of negative space around him; right
-edge shows the front corner of a glossy black boxy luxury SUV (round headlight + horizontal
-chrome grille) cropped into frame.
-Ground details: rough grey asphalt with faint tire scuffs and dust, a diagonal strip of small
-cobblestones near the top of frame, soft tree-branch shadows cast across the road.
-Subject: young adult man, light skin, short moustache, relaxed confident expression, looking up
-toward camera; wearing a brown baseball cap with white embroidered monogram letters, chunky
-black rectangular sunglasses; oversized black leather jacket with visible tan contrast stitching and
-wide lapels; white open-collar shirt underneath (slightly unbuttoned); beige knit V-neck buttoned
-vest/cardigan (4 buttons); very wide grey pleated trousers; white shoes with dark toe detail.
-Pose: left hand holding a white takeaway coffee cup with lid (small cup, beige sleeve), right hand
-raised touching the side of his cap/sunglasses.
-Lighting: warm late-afternoon sunlight from upper left, crisp highlights on leather jacket and SUV
-paint, gentle falloff, natural shadows.
-Color grade: warm cinematic browns/greys, slightly desaturated, subtle film grain, sharp subject
-with mild background softness, realistic textures, no extra people, no text.
-</p>
+<h3>Luxury Male Fashion Shoot</h3>
+<div id="p2" class="prompt-text">
+Luxury male fashion editorial.
+Clean studio background.
+Soft top light, subtle shadows.
+Confident masculine pose.
+Designer outfit, minimal colors.
+Sharp focus, premium magazine style.
+High-end fashion photography.
+</div>
+<div class="show-more" onclick="toggleText(this,'p2')">Devamını göster</div>
 <div class="actions">
 <button onclick="copyPrompt('p2',this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
 </div>
 
+<h2>📸 Portrait & Profile</h2>
+
 <div class="prompt">
-<h3>Luxury Mafia Portrait – Classic Interior</h3>
-<p id="p3">
-Create a long-range cinematic portrait of me, seated confidently in a classic upholstered armchair.
-Full-body visible, legs crossed, arms resting naturally on the chair. I am wearing a black three-piece
-suit with a white shirt and black tie, polished formal shoes. Face remains exactly the same as my
-reference, with even, fair, clean skin tone, smooth natural complexion, sharp jawline, well-groomed
-beard and eyebrows. Expression is calm, confident, and powerful.
-Lighting is low-key and dramatic, soft warm highlights on the face, deep shadows, cinematic contrast.
-Background is a dark, vintage interior, minimal details, luxury mafia-style atmosphere, subtle film
-grain.
-Camera: long shot, eye-level, centered composition.
-Style: cinematic movie still, ultra-realistic, high detail, shallow depth of field, professional color
-grading, 4K quality.
-</p>
+<h3>Dark Moody Profile Photo</h3>
+<div id="p3" class="prompt-text">
+Dark moody profile photo.
+Low light environment.
+Emotional expression.
+Soft highlights, deep shadows.
+Cinematic portrait photography.
+Natural skin texture.
+</div>
+<div class="show-more" onclick="toggleText(this,'p3')">Devamını göster</div>
 <div class="actions">
 <button onclick="copyPrompt('p3',this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
@@ -194,68 +185,82 @@ grading, 4K quality.
 </div>
 
 <div class="prompt">
-<h3>Avant-Garde Horse Fine Art Editorial</h3>
-<p id="p4">
-Photograph me sitting low on a minimalist metal stool, legs spread forward in a relaxed, grounded
-pose, feet planted on uneven outdoor terrain. One hand loosely resting between the knees holding
-thin leather reins, shoulders slightly slouched, head tilted downward in a calm, introspective
-expression.
-The subject wears dark oversized layered clothing, wide-leg trousers, leather boots, and dark
-sunglasses. A strong black horse stands closely behind the seated figure, aligned protectively and
-partially overlapping the subject's silhouette.
-Open natural landscape with rough ground and wild grass, bright overexposed sky creating strong
-negative space.
-High contrast lighting, deep blacks, soft highlights, matte texture.
-Timeless, cinematic mood.
-Medium-format film look, subtle grain, monochrome fine-art fashion editorial, avant-garde luxury
-photography.
-don't harm the quality of the picture give me in 1080p quality.
-</p>
+<h3>Ultra Realistic Studio Portrait</h3>
+<div id="p4" class="prompt-text">
+Ultra realistic studio portrait.
+85mm lens look.
+Natural skin texture.
+Sharp eyes, realistic reflections.
+Soft gold color grading.
+Face identity strictly preserved.
+</div>
+<div class="show-more" onclick="toggleText(this,'p4')">Devamını göster</div>
 <div class="actions">
 <button onclick="copyPrompt('p4',this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
 </div>
 
+<h2>🧝 Fantasy & Concept Art</h2>
+
 <div class="prompt">
-<h3>Pagani Huayra Cinematic Automotive Portrait</h3>
-<p id="p5">
-Mood & style: moody, cinematic, luxurious, mysterious, confident. Editorial fashion photography
-mixed with luxury automotive photography.
-Color grading: pure black-and-white, rich contrast, deep blacks, smooth grayscale transitions,
-film-like texture.
-Quality: ultra-high resolution, 8K detail, professional photography realism, no AI artifacts, no
-distortion, no exaggerated anatomy.
-Ultra-realistic black-and-white cinematic photograph, 9:16 vertical frame, shot on a full-frame DSLR
-with an 85mm lens, shallow depth of field, f/1.8.
-Camera position: eye-level, positioned approximately 60 degrees to the right side of the subject,
-slightly pulled back for a full-body shot. The camera is angled diagonally toward the front-left
-quarter of the car, not head-on.
-Subject: a confident, stylish man sitting casually on the front left fender (just ahead of the side
-mirror) of a black Pagani Huayra Roadster.
-He is wearing a tailored black suit with a black shirt underneath, slightly unbuttoned at the chest.
-Black leather dress shoes, clean and polished.
-Pose & expression: calm, composed, confident. Head slightly tilted forward and turned toward the
-lighter flame.
-He is lighting a cigar with one hand, holding a lighter close to the cigar tip. Subtle smoke curls
-upward from the cigar, adding atmosphere.
-Face & realism: hyper-realistic human face with natural skin texture, visible pores, subtle facial hair,
-sharp jawline. Sunglasses with dark lenses, thin metal frame. Hair slightly tousled, natural volume,
-realistic strands. No stylization or cartoon effect - photorealism only.
-Car details: glossy black Pagani Huayra Roadster with ultra-realistic reflections, visible carbon-fiber
-textures, sharp aerodynamic lines, detailed headlights, rims, and mirrors. The car paint reflects the
-environment naturally.
-Environment: secluded outdoor road with gravel ground, surrounded by dense trees and foliage in
-the background. The background is slightly blurred (cinematic bokeh) but still realistic and detailed.
-Lighting: soft natural daylight, overcast mood. Gentle contrast with subtle highlights on the car body
-and the subject's face. The lighter flame is a small bright focal point. No harsh shadows.
-Dont change the face.
-</p>
+<h3>Fantasy Elf Portrait</h3>
+<div id="p5" class="prompt-text">
+Fantasy elf portrait.
+Mystical atmosphere.
+Soft magical lighting.
+Detailed facial features.
+Fantasy concept art.
+Cinematic look.
+</div>
+<div class="show-more" onclick="toggleText(this,'p5')">Devamını göster</div>
 <div class="actions">
 <button onclick="copyPrompt('p5',this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
 </div>
+
+<h2>📱 Social Media Viral Prompts (Yeni)</h2>
+
+<div class="prompt"><h3>Instagram Reels Portrait</h3><div id="p6" class="prompt-text">
+Ultra sharp vertical portrait.
+Natural daylight.
+Clean background.
+Eye-catching composition.
+Optimized for Instagram Reels.
+</div><div class="show-more" onclick="toggleText(this,'p6')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p6',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+
+<div class="prompt"><h3>Street Photography Style</h3><div id="p7" class="prompt-text">
+Urban street photography.
+Natural candid pose.
+Dynamic city background.
+High contrast.
+Documentary style realism.
+</div><div class="show-more" onclick="toggleText(this,'p7')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p7',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+
+<div class="prompt"><h3>AI Influencer Look</h3><div id="p8" class="prompt-text">
+Modern AI influencer portrait.
+Perfect lighting.
+Stylish outfit.
+Clean aesthetic.
+Social media ready.
+</div><div class="show-more" onclick="toggleText(this,'p8')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p8',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+
+<div class="prompt"><h3>Cinematic Night Shot</h3><div id="p9" class="prompt-text">
+Night time cinematic portrait.
+Neon lights.
+Rain reflections.
+Cyberpunk mood.
+High detail.
+</div><div class="show-more" onclick="toggleText(this,'p9')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p9',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+
+<div class="prompt"><h3>Minimal Clean Headshot</h3><div id="p10" class="prompt-text">
+Minimal clean headshot.
+White background.
+Soft light.
+Professional look.
+LinkedIn / portfolio style.
+</div><div class="show-more" onclick="toggleText(this,'p10')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p10',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
 
 </section>
 
@@ -264,14 +269,18 @@ Dont change the face.
 </footer>
 
 <script>
+function toggleText(el,id){
+  const box=document.getElementById(id);
+  box.classList.toggle("expanded");
+  el.innerText=box.classList.contains("expanded")?"Kısalt":"Devamını göster";
+}
 function copyPrompt(id,btn){
   const text=document.getElementById(id).innerText.trim();
   navigator.clipboard.writeText(text);
   const counter=btn.nextElementSibling;
-  let count=parseInt(counter.innerText)||0;
-  counter.innerText=(count+1)+" kopyalama";
+  counter.innerText=(parseInt(counter.innerText)||0)+1+" kopyalama";
   btn.innerText="Kopyalandı ✓";
-  setTimeout(()=>btn.innerText="Kopyala",1500);
+  setTimeout(()=>btn.innerText="Kopyala",1400);
 }
 </script>
 
