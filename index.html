@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Soft Gold – AI Prompt Studio</title>
+<title>AI Prompt Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -29,15 +29,15 @@ header{
 
 header h1{
   color:var(--gold);
-  font-size:38px;
+  font-size:36px;
   letter-spacing:1px;
 }
 
 header span{
   display:block;
-  margin-top:8px;
-  font-size:28px;
-  font-weight:bold;
+  margin-top:10px;
+  font-size:30px;
+  font-weight:900;
   color:#ff4d4d;
 }
 
@@ -47,40 +47,40 @@ section{
 }
 
 h2{
-  margin:40px 0 20px;
+  margin:45px 0 20px;
   color:var(--accent);
   border-left:4px solid var(--gold);
-  padding-left:10px;
+  padding-left:12px;
 }
 
 .prompt{
   background:var(--card);
-  padding:18px;
-  border-radius:12px;
-  margin-bottom:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  padding:20px;
+  border-radius:14px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);
 }
 
 .prompt h3{
-  margin:0 0 10px;
+  margin:0 0 12px;
   color:var(--gold);
 }
 
 .prompt p{
   white-space:pre-line;
-  line-height:1.5;
+  line-height:1.55;
   color:#e5e7eb;
 }
 
 .actions{
-  margin-top:12px;
+  margin-top:14px;
   display:flex;
   gap:12px;
   align-items:center;
 }
 
 button{
-  padding:7px 14px;
+  padding:8px 16px;
   border:none;
   border-radius:8px;
   cursor:pointer;
@@ -108,14 +108,14 @@ button{
 /* Feedback */
 form{
   background:var(--card);
-  padding:20px;
-  border-radius:12px;
+  padding:22px;
+  border-radius:14px;
 }
 
 input, textarea{
   width:100%;
   margin-bottom:12px;
-  padding:10px;
+  padding:12px;
   border-radius:8px;
   border:none;
   outline:none;
@@ -123,7 +123,7 @@ input, textarea{
 
 footer{
   text-align:center;
-  margin-top:50px;
+  margin-top:60px;
   color:#64748b;
 }
 </style>
@@ -132,51 +132,58 @@ footer{
 <body>
 
 <header>
-  <h1>Soft Gold – AI Prompt Studio</h1>
+  <h1>AI Prompt Studio</h1>
   <span>M.AKİF</span>
 </header>
 
 <section>
 
-<h2>🔥 Popüler Promptlar</h2>
+<h2>🔥 Cinematic & Luxury Prompts</h2>
 
 <div class="prompt popular">
-<h3>Cinematic Horse Portrait</h3>
+<h3>Cinematic Horse Editorial</h3>
 <p id="p1">
-A young man, 180 cm tall and slender, riding a strong black horse...
-(monochrome cinematic, Leica M11, motion blur, ultra realism)
+A young man, 180 cm tall and slender, is shown riding a strong, black-haired horse, viewed from a slight front angle (three-quarter front view).
+Behind him are sweet, beautiful trees and sand on the ground.
+The camera looks slightly down on the horse as it moves forward, creating a powerful cinematic atmosphere.
+The man looks calm and fearless, face fully visible.
+Muscular horse mid-stride, dust particles around legs, strong motion blur in background.
+Monochrome cinematic style, Leica M11, film grain, deep contrast.
 </p>
 <div class="actions">
 <button onclick="copyPrompt('p1', this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
-<div class="gemini">En iyi sonuçlar: Gemini Image / Gemini Advanced</div>
+<div class="gemini">Önerilen: Gemini Image / Gemini Advanced</div>
 </div>
 
-<h2>🎨 Editorial & Fashion Prompts</h2>
-
 <div class="prompt">
-<h3>Luxury Mafia Portrait</h3>
+<h3>Dark Moody Profile Photo</h3>
 <p id="p2">
-Create a long-range cinematic portrait of me, seated confidently in a classic armchair...
+A dark moody profile photo, low light, emotional expression,
+soft highlights, deep shadows,
+cinematic portrait photography.
 </p>
 <div class="actions">
 <button onclick="copyPrompt('p2', this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
-<div class="gemini">En iyi sonuçlar: Gemini Image / Gemini Advanced</div>
+<div class="gemini">Önerilen: Gemini Image</div>
 </div>
 
 <div class="prompt">
-<h3>Street Style Editorial</h3>
+<h3>Fantasy Elf Portrait</h3>
 <p id="p3">
-High-angle editorial street-style photograph, balcony viewpoint...
+A fantasy elf portrait,
+mystical atmosphere, soft magical light,
+detailed facial features,
+fantasy concept art, cinematic look.
 </p>
 <div class="actions">
 <button onclick="copyPrompt('p3', this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
-<div class="gemini">En iyi sonuçlar: Gemini Image / Gemini Advanced</div>
+<div class="gemini">Önerilen: Gemini Image</div>
 </div>
 
 <h2>🧠 Sizin Düşünceleriniz</h2>
@@ -190,7 +197,7 @@ High-angle editorial street-style photograph, balcony viewpoint...
 </section>
 
 <footer>
-© 2026 Soft Gold – AI Prompt Studio
+© 2026 AI Prompt Studio
 </footer>
 
 <script>
