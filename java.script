@@ -1,0 +1,15 @@
+function copyPrompt(button) {
+  const promptText = button
+    .closest(".prompt-card")
+    .querySelector(".prompt-text")
+    .innerText;
+
+  navigator.clipboard.writeText(promptText).then(() => {
+    const originalText = button.innerText;
+    button.innerText = "Kopyalandı ✅";
+
+    setTimeout(() => {
+      button.innerText = originalText;
+    }, 1500);
+  });
+}
