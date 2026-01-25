@@ -1,73 +1,88 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>AI Image Prompts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #ffffff;
-  padding: 20px;
-}
-h1 {
-  color: #38bdf8;
-}
-.prompt {
-  background: #1e293b;
-  padding: 15px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-}
-button {
-  margin-top: 8px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>AI Image Prompts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 20px;
+    }
+    h1 {
+      color: #38bdf8;
+    }
+    .prompt {
+      background: #1e293b;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 8px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
 <h1>🎨 AI Image Prompts</h1>
 
 <div class="prompt">
-<b>Cyberpunk Girl</b>
-<p>A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k</p>
-<button onclick="copyPrompt(this)">Kopyala</button>
+  <b>Cyberpunk Girl</b>
+  <p id="prompt1">
+    A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k
+  </p>
+  <button onclick="copyPrompt('prompt1', this)">Kopyala</button>
 </div>
 
 <h1>Dark Moody Profile Photo</h1>
 
 <div class="prompt">
-A dark moody profile photo,
-low light, emotional expression,
-soft highlights, deep shadows,
-cinematic portrait photography
-<button onclick="copyPrompt(this)">Kopyala</button>
+  <p id="prompt2">
+    A dark moody profile photo,
+    low light, emotional expression,
+    soft highlights, deep shadows,
+    cinematic portrait photography
+  </p>
+  <button onclick="copyPrompt('prompt2', this)">Kopyala</button>
 </div>
 
 <h1>Fantasy Elf Portrait</h1>
 
 <div class="prompt">
-A fantasy elf portrait,
-mystical atmosphere, soft magical light,
-detailed facial features,
-fantasy concept art, cinematic look
-<button onclick="copyPrompt(this)">Kopyala</button>
+  <p id="prompt3">
+    A fantasy elf portrait,
+    mystical atmosphere, soft magical light,
+    detailed facial features,
+    fantasy concept art, cinematic look
+  </p>
+  <button onclick="copyPrompt('prompt3', this)">Kopyala</button>
 </div>
 
-<script>
-function copyPrompt(btn) {
-  const text = btn.parentElement.innerText.replace("Kopyala", "").trim();
+<h1>Luxury Male Fashion Shoot</h1>
 
-  // Eski + yeni tarayıcı uyumlu yöntem
+<script>
+function copyPrompt(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const text = el.innerText.trim();
+
   const textarea = document.createElement("textarea");
   textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+
   document.body.appendChild(textarea);
+  textarea.focus();
   textarea.select();
+
   document.execCommand("copy");
   document.body.removeChild(textarea);
 
