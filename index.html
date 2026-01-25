@@ -35,7 +35,9 @@
 
 <div class="prompt">
   <b>Cyberpunk Girl</b>
-  <p id="prompt1">A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k</p>
+  <p id="prompt1">
+    A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k
+  </p>
   <button data-target="prompt1">Kopyala</button>
 </div>
 
@@ -63,17 +65,30 @@
   <button data-target="prompt3">Kopyala</button>
 </div>
 
+<h1>Luxury Male Fashion Shoot</h1>
+
+<div class="prompt">
+  <p id="prompt4">
+    Luxury male fashion shoot,
+    elegant pose, studio lighting,
+    high-end fashion photography,
+    sharp details, editorial style
+  </p>
+  <button data-target="prompt4">Kopyala</button>
+</div>
+
 <script>
 document.querySelectorAll("button[data-target]").forEach(btn => {
   btn.addEventListener("click", async () => {
     const id = btn.getAttribute("data-target");
-    const text = document.getElementById(id).innerText.trim();
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const text = el.innerText.trim();
 
     try {
-      // MODERN TARAYICILAR
       await navigator.clipboard.writeText(text);
     } catch {
-      // FALLBACK (her yerde çalışır)
       const textarea = document.createElement("textarea");
       textarea.value = text;
       document.body.appendChild(textarea);
