@@ -2,11 +2,10 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>AI Image Prompts</title>
+  <title>AI Prompt Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* ===== BASE ===== */
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
@@ -27,14 +26,22 @@
     }
 
     h1 {
-      color: #38bdf8;
-      margin-bottom: 30px;
+      color: #eab308; /* soft gold */
+      margin-bottom: 4px;
       position: relative;
       z-index: 1;
     }
 
+    .signature {
+      color: #94a3b8;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
     h2 {
-      color: #dc2626; /* cinematic red */
+      color: #eab308;
       margin-bottom: 4px;
     }
 
@@ -44,14 +51,13 @@
       margin-bottom: 8px;
     }
 
-    /* ===== PROMPT CARD ===== */
     .prompt {
       position: relative;
       background: #1e293b;
       padding: 16px 16px 18px 20px;
       margin-bottom: 20px;
       border-radius: 10px;
-      border-left: 3px solid #dc2626;
+      border-left: 3px solid #eab308;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       z-index: 1;
     }
@@ -73,21 +79,22 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      background: #38bdf8;
+      background: #eab308;
       color: #020617;
       font-weight: bold;
       transition: background 0.2s ease;
     }
 
     button:hover {
-      background: #0ea5e9;
+      background: #ca8a04;
     }
   </style>
 </head>
 
 <body>
 
-<h1>🎨 AI Image Prompts Collection</h1>
+<h1>🤖 AI Prompt Studio</h1>
+<div class="signature">M.AKİF</div>
 
 <!-- PROMPT 1 -->
 <div class="prompt">
