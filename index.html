@@ -2,191 +2,215 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>AI Prompt Studio</title>
+<title>Soft Gold – AI Prompt Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #ffffff;
-  padding: 20px;
+:root{
+  --bg:#0b0f1a;
+  --card:#141a2b;
+  --gold:#d4af37;
+  --soft:#a8b2d1;
+  --accent:#38bdf8;
 }
 
-h1 {
-  color: #eab308;
-  margin-bottom: 4px;
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:radial-gradient(circle at top, #11172a, #05070f);
+  color:#fff;
+  padding:20px;
 }
 
-.signature {
-  color: #94a3b8;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 30px;
+header{
+  text-align:center;
+  margin-bottom:40px;
 }
 
-.prompt {
-  background: #1e293b;
-  padding: 18px;
-  margin-bottom: 22px;
-  border-radius: 14px;
+header h1{
+  color:var(--gold);
+  font-size:38px;
+  letter-spacing:1px;
 }
 
-.badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 999px;
-  margin-bottom: 8px;
+header span{
+  display:block;
+  margin-top:8px;
+  font-size:28px;
+  font-weight:bold;
+  color:#ff4d4d;
 }
 
-.badge.cinematic { background: rgba(34,211,238,.15); color:#22d3ee; }
-.badge.premium { background: rgba(234,179,8,.15); color:#eab308; }
-.badge.trending { background: rgba(239,68,68,.15); color:#ef4444; }
-.badge.social { background: rgba(236,72,153,.15); color:#ec4899; }
-
-.mood {
-  font-size: 12px;
-  font-style: italic;
-  color: #cbd5f5;
-  margin-bottom: 8px;
+section{
+  max-width:1000px;
+  margin:auto;
 }
 
-button {
-  margin-top: 12px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #334155;
-  color: white;
+h2{
+  margin:40px 0 20px;
+  color:var(--accent);
+  border-left:4px solid var(--gold);
+  padding-left:10px;
 }
 
-.copy-hint {
-  font-size: 11px;
-  color: #94a3b8;
-  margin-top: 6px;
+.prompt{
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.prompt h3{
+  margin:0 0 10px;
+  color:var(--gold);
+}
+
+.prompt p{
+  white-space:pre-line;
+  line-height:1.5;
+  color:#e5e7eb;
+}
+
+.actions{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+button{
+  padding:7px 14px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:var(--gold);
+  color:#000;
+  font-weight:bold;
+}
+
+.counter{
+  font-size:13px;
+  color:var(--soft);
+}
+
+.gemini{
+  font-size:12px;
+  color:#9ae6b4;
+  margin-top:6px;
+  display:none;
+}
+
+.popular{
+  border:1px solid var(--gold);
+}
+
+/* Feedback */
+form{
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+}
+
+input, textarea{
+  width:100%;
+  margin-bottom:12px;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+footer{
+  text-align:center;
+  margin-top:50px;
+  color:#64748b;
 }
 </style>
 </head>
 
 <body>
 
-<h1>AI Prompt Studio</h1>
-<div class="signature">M.AKİF</div>
+<header>
+  <h1>Soft Gold – AI Prompt Studio</h1>
+  <span>M.AKİF</span>
+</header>
 
-<!-- PROMPT 1 -->
-<div class="prompt">
-<span class="badge cinematic">🎬 Cinematic</span>
-<div class="mood">Mood: Dark · Cinematic · Confident</div>
+<section>
+
+<h2>🔥 Popüler Promptlar</h2>
+
+<div class="prompt popular">
+<h3>Cinematic Horse Portrait</h3>
 <p id="p1">
-A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k
+A young man, 180 cm tall and slender, riding a strong black horse...
+(monochrome cinematic, Leica M11, motion blur, ultra realism)
 </p>
-<button onclick="copyPrompt('p1',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
+<div class="actions">
+<button onclick="copyPrompt('p1', this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+<div class="gemini">En iyi sonuçlar: Gemini Image / Gemini Advanced</div>
 </div>
 
-<!-- PROMPT 2 -->
+<h2>🎨 Editorial & Fashion Prompts</h2>
+
 <div class="prompt">
-<span class="badge premium">👑 Premium Look</span>
-<div class="mood">Mood: Moody · Emotional · Cinematic</div>
+<h3>Luxury Mafia Portrait</h3>
 <p id="p2">
-A dark moody profile photo, low light, emotional expression, soft highlights,
-deep shadows, cinematic portrait photography
+Create a long-range cinematic portrait of me, seated confidently in a classic armchair...
 </p>
-<button onclick="copyPrompt('p2',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
+<div class="actions">
+<button onclick="copyPrompt('p2', this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+<div class="gemini">En iyi sonuçlar: Gemini Image / Gemini Advanced</div>
 </div>
 
-<!-- PROMPT 3 -->
 <div class="prompt">
-<span class="badge trending">🔥 Trending</span>
-<div class="mood">Mood: Mystical · Fantasy · Cinematic</div>
+<h3>Street Style Editorial</h3>
 <p id="p3">
-A fantasy elf portrait, mystical atmosphere, soft magical light,
-detailed facial features, fantasy concept art, cinematic look
+High-angle editorial street-style photograph, balcony viewpoint...
 </p>
-<button onclick="copyPrompt('p3',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
+<div class="actions">
+<button onclick="copyPrompt('p3', this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+<div class="gemini">En iyi sonuçlar: Gemini Image / Gemini Advanced</div>
 </div>
 
-<!-- PROMPT 4 – HORSE CINEMATIC -->
-<div class="prompt">
-<span class="badge cinematic">🎬 Cinematic</span>
-<div class="mood">Mood: Powerful · Epic · Editorial</div>
-<p id="p4">
-A young man, 180 cm tall and slender, riding a strong black horse from a
-three-quarter front angle. Cinematic motion blur in background, dust particles,
-Leica M11 look, monochrome cinematic style. Face must be 100% preserved.
-</p>
-<button onclick="copyPrompt('p4',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
-</div>
+<h2>🧠 Sizin Düşünceleriniz</h2>
 
-<!-- PROMPT 5 – STREET EDITORIAL -->
-<div class="prompt">
-<span class="badge social">📸 Social Media Ready</span>
-<div class="mood">Mood: Urban · Fashion · Editorial</div>
-<p id="p5">
-High-angle editorial street-style photograph from balcony, stylish man on
-sunlit asphalt, luxury SUV cropped, warm cinematic light, realistic textures.
-</p>
-<button onclick="copyPrompt('p5',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
-</div>
+<form action="mailto:mehmetakifaltuntas61@icloud.com" method="post" enctype="text/plain">
+<input type="text" name="İsim" placeholder="Adınız">
+<textarea name="Mesaj" rows="5" placeholder="Site hakkındaki düşünceleriniz..."></textarea>
+<button type="submit">Gönder</button>
+</form>
 
-<!-- PROMPT 6 – MAFIA PORTRAIT -->
-<div class="prompt">
-<span class="badge premium">👑 Premium Look</span>
-<div class="mood">Mood: Powerful · Dark · Luxury</div>
-<p id="p6">
-Long-range cinematic portrait of a man seated in a classic armchair,
-black three-piece suit, mafia-style atmosphere, dramatic lighting,
-film grain, ultra-realistic.
-</p>
-<button onclick="copyPrompt('p6',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
-</div>
+</section>
 
-<!-- PROMPT 7 – HORSE FINE ART -->
-<div class="prompt">
-<span class="badge cinematic">🎬 Cinematic</span>
-<div class="mood">Mood: Avant-Garde · Monochrome · Luxury</div>
-<p id="p7">
-Minimalist fine-art fashion photograph, man seated low with black horse
-behind him, monochrome medium-format film look, strong negative space.
-</p>
-<button onclick="copyPrompt('p7',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
-</div>
-
-<!-- PROMPT 8 – PAGANI -->
-<div class="prompt">
-<span class="badge premium">👑 Premium Look</span>
-<div class="mood">Mood: Luxury · Cinematic · Confident</div>
-<p id="p8">
-Ultra-realistic black-and-white cinematic photograph of a stylish man
-sitting on a black Pagani Huayra Roadster, lighting a cigar, 85mm lens,
-deep contrast, face unchanged.
-</p>
-<button onclick="copyPrompt('p8',this)">Kopyala</button>
-<div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
-</div>
+<footer>
+© 2026 Soft Gold – AI Prompt Studio
+</footer>
 
 <script>
-function copyPrompt(id, btn) {
-  const el = document.getElementById(id);
-  const t = document.createElement("textarea");
-  t.value = el.innerText.trim();
-  document.body.appendChild(t);
-  t.select();
-  document.execCommand("copy");
-  document.body.removeChild(t);
-  btn.innerText = "Kopyalandı ✅";
-  setTimeout(()=>btn.innerText="Kopyala",1500);
+function copyPrompt(id, btn){
+  const text=document.getElementById(id).innerText.trim();
+  navigator.clipboard.writeText(text);
+
+  const counter=btn.nextElementSibling;
+  let count=parseInt(counter.innerText)||0;
+  count++;
+  counter.innerText=count+" kopyalama";
+
+  btn.innerText="Kopyalandı ✓";
+  const gemini=btn.parentElement.nextElementSibling;
+  gemini.style.display="block";
+
+  setTimeout(()=>{
+    btn.innerText="Kopyala";
+    gemini.style.display="none";
+  },1800);
 }
 </script>
 
