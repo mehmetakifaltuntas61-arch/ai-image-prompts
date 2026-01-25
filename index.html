@@ -13,23 +13,26 @@
     }
     h1 {
       color: #38bdf8;
-      margin-top: 32px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #e5e7eb;
+      margin-bottom: 6px;
     }
     .prompt {
       background: #1e293b;
       padding: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       border-radius: 8px;
-      line-height: 1.5;
     }
     button {
-      margin-top: 12px;
+      margin-top: 10px;
       padding: 6px 14px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       background: #38bdf8;
-      color: #0f172a;
+      color: #020617;
       font-weight: bold;
     }
   </style>
@@ -38,95 +41,134 @@
 
 <h1>🎨 AI Image Prompts</h1>
 
-<!-- PROMPT 1 -->
+<!-- 1 -->
 <div class="prompt">
-<p id="prompt1">
-A young man, 180 cm tall and slender, is shown riding a strong, black-haired horse, viewed from a slight front angle (three-quarter front view). Behind him are sweet, beautiful trees and sand on the ground. The camera is positioned to look slightly down on the horse as it moves forward, creating a powerful, confident cinematic atmosphere. The man looks slightly to the side with a calm and fearless expression, his face fully visible.
-He sits upright and balanced, holding the reins naturally while leaning slightly into the horse's forward movement. Muscular and imposing, the thick, wavy-maned horse is captured mid-stride, emphasizing its power and speed.
-He wears a large black shirt with the top buttons open, black fabric trousers, a leather belt, and clean black classic shoes. A thin silver wristwatch reflects the light on his wrist, and sleek rectangular sunglasses with narrow frames complete his modern and stylish look.
-The face must be 100% preserved as provided. No changes to facial structure or identity.
-Strong motion blur in the background, sharp subject and horse, dust particles for realism.
-Image taken with Leica M11. Vintage black-and-white cinematic aesthetic with film grain.
+<h2>Cinematic Man Riding Black Horse</h2>
+<p id="p1">
+A young man riding a powerful black horse, three-quarter front view, cinematic motion blur,
+monochrome editorial fashion photography, Leica M11, strong confidence, preserved face.
 </p>
-<button data-target="prompt1">Kopyala</button>
+<button onclick="copyPrompt('p1', this)">Kopyala</button>
 </div>
 
-<!-- PROMPT 2 -->
+<!-- 2 -->
 <div class="prompt">
-<p id="prompt2">
-High-angle editorial street-style photograph taken from a balcony looking down at a stylish man standing on sunlit asphalt.
-Subject slightly left, full body visible, negative space around. Right edge shows cropped glossy black luxury SUV.
-Rough grey asphalt, cobblestones, tree shadows.
-Young adult man, light skin, short moustache, confident expression, looking up. Brown cap with white monogram, black rectangular sunglasses.
-Oversized black leather jacket with tan stitching, white open-collar shirt, beige knit vest, wide grey pleated trousers, white shoes.
-Left hand holding takeaway coffee, right hand touching cap.
-Warm late-afternoon sunlight, cinematic color grading, subtle film grain, no text, no extra people.
+<h2>High-Angle Editorial Street Style</h2>
+<p id="p2">
+High-angle editorial street-style photo, luxury SUV edge in frame, confident man,
+warm cinematic sunlight, film grain, fashion photography realism.
 </p>
-<button data-target="prompt2">Kopyala</button>
+<button onclick="copyPrompt('p2', this)">Kopyala</button>
 </div>
 
-<!-- PROMPT 3 -->
+<!-- 3 -->
 <div class="prompt">
-<p id="prompt3">
-Long-range cinematic portrait of me seated confidently in a classic upholstered armchair. Full body visible, legs crossed, arms resting naturally.
-Black three-piece suit, white shirt, black tie, polished formal shoes.
-Face remains exactly the same as reference. Clean skin, sharp jawline, groomed beard and eyebrows.
-Low-key dramatic lighting, warm highlights, deep shadows.
-Dark vintage interior, luxury mafia-style atmosphere, subtle film grain.
-Camera: eye-level long shot, centered composition, cinematic movie still, ultra-realistic, 4K.
+<h2>Luxury Mafia Style Portrait</h2>
+<p id="p3">
+Cinematic mafia-style portrait, man seated in armchair, black suit, dramatic low-key lighting,
+vintage interior, ultra-realistic, face preserved.
 </p>
-<button data-target="prompt3">Kopyala</button>
+<button onclick="copyPrompt('p3', this)">Kopyala</button>
 </div>
 
-<!-- PROMPT 4 -->
+<!-- 4 -->
 <div class="prompt">
-<p id="prompt4">
-Photograph me sitting low on a minimalist metal stool, legs spread forward, feet planted on uneven outdoor terrain.
-One hand holding thin leather reins, shoulders slightly slouched, calm introspective expression.
-Dark oversized layered clothing, wide-leg trousers, leather boots, dark sunglasses.
-Strong black horse stands closely behind, aligned protectively.
-Open natural landscape, rough ground, wild grass, overexposed sky with negative space.
-High contrast lighting, deep blacks, matte texture, monochrome fine-art fashion editorial.
-Medium-format film look, subtle grain. Output quality 1080p without harming image quality.
+<h2>Avant-Garde Man and Horse Editorial</h2>
+<p id="p4">
+Avant-garde fashion editorial, man seated low with black horse behind,
+monochrome fine-art look, cinematic contrast, medium-format film grain.
 </p>
-<button data-target="prompt4">Kopyala</button>
+<button onclick="copyPrompt('p4', this)">Kopyala</button>
 </div>
 
-<!-- PROMPT 5 -->
+<!-- 5 -->
 <div class="prompt">
-<p id="prompt5">
-Ultra-realistic black-and-white cinematic photograph, 9:16 vertical frame, full-frame DSLR, 85mm lens, f/1.8.
-A confident stylish man sitting casually on the front left fender of a black Pagani Huayra Roadster.
-Tailored black suit with black shirt slightly unbuttoned, black leather shoes.
-Lighting a cigar, subtle smoke, calm confident expression.
-Face must not change. Natural skin texture, sharp jawline, sunglasses with thin metal frame.
-Glossy Pagani reflections, carbon fiber details, gravel road, dense trees background with cinematic bokeh.
-Soft overcast daylight, dramatic but natural contrast. No distortion, no AI artifacts.
+<h2>Black & White Pagani Huayra Cinematic Shot</h2>
+<p id="p5">
+Ultra-realistic black-and-white shot of a man sitting on a Pagani Huayra Roadster,
+lighting a cigar, cinematic depth, luxury automotive editorial.
 </p>
-<button data-target="prompt5">Kopyala</button>
+<button onclick="copyPrompt('p5', this)">Kopyala</button>
+</div>
+
+<!-- 6 -->
+<div class="prompt">
+<h2>Luxury Street Portrait (Social Media Favorite)</h2>
+<p id="p6">
+Ultra-realistic street portrait of a stylish man, luxury outfit, shallow depth of field,
+soft daylight, cinematic Instagram aesthetic, professional fashion photography.
+</p>
+<button onclick="copyPrompt('p6', this)">Kopyala</button>
+</div>
+
+<!-- 7 -->
+<div class="prompt">
+<h2>Moody Window Light Portrait</h2>
+<p id="p7">
+Moody portrait near a window, soft natural light hitting the face,
+deep shadows, cinematic mood, minimal background, editorial realism.
+</p>
+<button onclick="copyPrompt('p7', this)">Kopyala</button>
+</div>
+
+<!-- 8 -->
+<div class="prompt">
+<h2>Old Money Aesthetic Male Portrait</h2>
+<p id="p8">
+Old money aesthetic portrait, classic tailoring, neutral tones,
+timeless elegance, soft contrast lighting, luxury editorial photography.
+</p>
+<button onclick="copyPrompt('p8', this)">Kopyala</button>
+</div>
+
+<!-- 9 -->
+<div class="prompt">
+<h2>Rainy Night Neon Cinematic Portrait</h2>
+<p id="p9">
+Cinematic night portrait in rain, neon reflections, wet streets,
+dramatic lighting, cyberpunk mood, ultra-detailed realism.
+</p>
+<button onclick="copyPrompt('p9', this)">Kopyala</button>
+</div>
+
+<!-- 10 -->
+<div class="prompt">
+<h2>Minimal Studio Fashion Shot</h2>
+<p id="p10">
+Minimal studio fashion photograph, clean background,
+soft directional light, sharp focus, modern editorial look.
+</p>
+<button onclick="copyPrompt('p10', this)">Kopyala</button>
+</div>
+
+<!-- 11 -->
+<div class="prompt">
+<h2>Backlight Silhouette Editorial</h2>
+<p id="p11">
+Strong backlight silhouette portrait, subject partially in shadow,
+cinematic contrast, dramatic fashion editorial style.
+</p>
+<button onclick="copyPrompt('p11', this)">Kopyala</button>
+</div>
+
+<!-- 12 -->
+<div class="prompt">
+<h2>Close-Up Cinematic Face Portrait</h2>
+<p id="p12">
+Extreme close-up cinematic face portrait, shallow depth of field,
+natural skin texture, dramatic lighting, ultra-realistic photography.
+</p>
+<button onclick="copyPrompt('p12', this)">Kopyala</button>
 </div>
 
 <script>
-document.querySelectorAll("button[data-target]").forEach(btn => {
-  btn.addEventListener("click", async () => {
-    const id = btn.getAttribute("data-target");
-    const text = document.getElementById(id).innerText.trim();
-
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch {
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
-    }
-
-    btn.textContent = "Kopyalandı ✅";
-    setTimeout(() => btn.textContent = "Kopyala", 1500);
+function copyPrompt(id, btn) {
+  const text = document.getElementById(id).innerText.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.innerText = "Kopyalandı ✅";
+    setTimeout(() => btn.innerText = "Kopyala", 1500);
   });
-});
+}
 </script>
 
 </body>
