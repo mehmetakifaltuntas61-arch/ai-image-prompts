@@ -8,233 +8,166 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      background: radial-gradient(circle at top, #0f172a, #020617);
       color: #ffffff;
       padding: 20px;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Film grain */
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
     }
 
     h1 {
       color: #eab308; /* soft gold */
       margin-bottom: 4px;
-      position: relative;
-      z-index: 1;
     }
 
     .signature {
       color: #94a3b8;
-      font-size: 18px;
-      letter-spacing: 2px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      color: #eab308;
-      margin-bottom: 4px;
-    }
-
-    .meta {
-      font-size: 12px;
-      color: #9ca3af;
-      margin-bottom: 8px;
+      margin-bottom: 24px;
     }
 
     .prompt {
-      position: relative;
       background: #1e293b;
-      padding: 16px 16px 18px 20px;
-      margin-bottom: 20px;
+      padding: 16px;
+      margin-bottom: 18px;
       border-radius: 10px;
-      border-left: 3px solid #eab308;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      z-index: 1;
     }
 
-    .prompt:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin-bottom: 6px;
     }
 
-    .prompt p {
-      white-space: pre-line;
-      font-size: 14px;
-      line-height: 1.55;
+    .badge.trending {
+      background: rgba(234,179,8,0.15);
+      color: #eab308;
+    }
+
+    .badge.cinematic {
+      background: rgba(34,211,238,0.15);
+      color: #22d3ee;
+    }
+
+    .badge.premium {
+      background: rgba(148,163,184,0.15);
+      color: #cbd5f5;
+    }
+
+    .badge.social {
+      background: rgba(236,72,153,0.15);
+      color: #ec4899;
+    }
+
+    .mood {
+      font-size: 12px;
+      font-style: italic;
+      color: #cbd5f5;
+      margin-bottom: 6px;
     }
 
     button {
-      margin-top: 12px;
-      padding: 7px 16px;
+      margin-top: 10px;
+      padding: 6px 14px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      background: #eab308;
-      color: #020617;
-      font-weight: bold;
-      transition: background 0.2s ease;
+      background: #334155;
+      color: #fff;
     }
 
-    button:hover {
-      background: #ca8a04;
+    .copy-hint {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 4px;
     }
   </style>
 </head>
 
 <body>
 
-<h1>🤖 AI Prompt Studio</h1>
+<h1>AI Prompt Studio</h1>
 <div class="signature">M.AKİF</div>
 
 <!-- PROMPT 1 -->
 <div class="prompt">
-  <h2>Cinematic Man Riding Black Horse</h2>
-  <div class="meta">Editorial • Cinematic • Monochrome</div>
-  <p id="p1">
-A young man riding a powerful black horse, three-quarter front view, cinematic motion blur,
-monochrome editorial fashion photography, Leica M11, strong confidence, preserved face.
+  <span class="badge cinematic">🎬 Cinematic</span>
+  <div class="mood">Mood: Dark · Cinematic · Confident</div>
+
+  <p id="prompt1">
+    A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k
   </p>
-  <button onclick="copyPrompt('p1', this)">Kopyala</button>
+
+  <button onclick="copyPrompt('prompt1', this)">Kopyala</button>
+  <div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
 </div>
 
 <!-- PROMPT 2 -->
 <div class="prompt">
-  <h2>High-Angle Editorial Street Style</h2>
-  <div class="meta">Street • Fashion • Editorial</div>
-  <p id="p2">
-High-angle editorial street-style photo, luxury SUV edge in frame, confident man,
-warm cinematic sunlight, film grain, fashion photography realism.
+  <span class="badge premium">👑 Premium Look</span>
+  <div class="mood">Mood: Moody · Emotional · Cinematic</div>
+
+  <p id="prompt2">
+    A dark moody profile photo, low light, emotional expression,
+    soft highlights, deep shadows, cinematic portrait photography
   </p>
-  <button onclick="copyPrompt('p2', this)">Kopyala</button>
+
+  <button onclick="copyPrompt('prompt2', this)">Kopyala</button>
+  <div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
 </div>
 
 <!-- PROMPT 3 -->
 <div class="prompt">
-  <h2>Luxury Mafia Style Portrait</h2>
-  <div class="meta">Luxury • Portrait • Cinematic</div>
-  <p id="p3">
-Cinematic mafia-style portrait, man seated in armchair, black suit, dramatic low-key lighting,
-vintage interior, ultra-realistic, face preserved.
+  <span class="badge trending">🔥 Trending</span>
+  <div class="mood">Mood: Mystical · Fantasy · Cinematic</div>
+
+  <p id="prompt3">
+    A fantasy elf portrait, mystical atmosphere, soft magical light,
+    detailed facial features, fantasy concept art, cinematic look
   </p>
-  <button onclick="copyPrompt('p3', this)">Kopyala</button>
+
+  <button onclick="copyPrompt('prompt3', this)">Kopyala</button>
+  <div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
 </div>
 
-<!-- PROMPT 4 -->
+<!-- PROMPT 4 (LONG CINEMATIC) -->
 <div class="prompt">
-  <h2>Avant-Garde Man and Horse Editorial</h2>
-  <div class="meta">Avant-Garde • Fashion • Fine Art</div>
-  <p id="p4">
-Avant-garde fashion editorial, man seated low with black horse behind,
-monochrome fine-art look, cinematic contrast, medium-format film grain.
-  </p>
-  <button onclick="copyPrompt('p4', this)">Kopyala</button>
-</div>
+  <span class="badge cinematic">🎬 Cinematic</span>
+  <div class="mood">Mood: Luxury · Powerful · Editorial</div>
 
-<!-- PROMPT 5 -->
-<div class="prompt">
-  <h2>Black & White Pagani Huayra Cinematic Shot</h2>
-  <div class="meta">Automotive • Luxury • Editorial</div>
-  <p id="p5">
-Ultra-realistic black-and-white shot of a man sitting on a Pagani Huayra Roadster,
-lighting a cigar, cinematic depth, luxury automotive editorial.
+  <p id="prompt4">
+    Ultra-realistic black-and-white cinematic photograph of a confident,
+    stylish man sitting on a black Pagani Huayra Roadster, lighting a cigar.
+    Shot on a full-frame DSLR, 85mm lens, shallow depth of field,
+    rich contrast, deep blacks, subtle film grain, luxury editorial fashion mood.
+    Face must not be altered.
   </p>
-  <button onclick="copyPrompt('p5', this)">Kopyala</button>
-</div>
 
-<!-- PROMPT 6 -->
-<div class="prompt">
-  <h2>Luxury Street Portrait</h2>
-  <div class="meta">Social Media • Fashion • Lifestyle</div>
-  <p id="p6">
-Ultra-realistic street portrait of a stylish man, luxury outfit, shallow depth of field,
-soft daylight, cinematic Instagram aesthetic.
-  </p>
-  <button onclick="copyPrompt('p6', this)">Kopyala</button>
-</div>
-
-<!-- PROMPT 7 -->
-<div class="prompt">
-  <h2>Moody Window Light Portrait</h2>
-  <div class="meta">Portrait • Moody • Editorial</div>
-  <p id="p7">
-Moody portrait near a window, soft natural light hitting the face,
-deep shadows, cinematic mood, minimal background.
-  </p>
-  <button onclick="copyPrompt('p7', this)">Kopyala</button>
-</div>
-
-<!-- PROMPT 8 -->
-<div class="prompt">
-  <h2>Old Money Aesthetic Male</h2>
-  <div class="meta">Old Money • Classic • Luxury</div>
-  <p id="p8">
-Old money aesthetic portrait, classic tailoring, neutral tones,
-timeless elegance, soft contrast lighting.
-  </p>
-  <button onclick="copyPrompt('p8', this)">Kopyala</button>
-</div>
-
-<!-- PROMPT 9 -->
-<div class="prompt">
-  <h2>Rainy Night Neon Cinematic Portrait</h2>
-  <div class="meta">Night • Neon • Cinematic</div>
-  <p id="p9">
-Cinematic night portrait in rain, neon reflections, wet streets,
-dramatic lighting, cyberpunk mood.
-  </p>
-  <button onclick="copyPrompt('p9', this)">Kopyala</button>
-</div>
-
-<!-- PROMPT 10 -->
-<div class="prompt">
-  <h2>Minimal Studio Fashion Shot</h2>
-  <div class="meta">Studio • Minimal • Fashion</div>
-  <p id="p10">
-Minimal studio fashion photograph, clean background,
-soft directional light, modern editorial look.
-  </p>
-  <button onclick="copyPrompt('p10', this)">Kopyala</button>
-</div>
-
-<!-- PROMPT 11 -->
-<div class="prompt">
-  <h2>Backlight Silhouette Editorial</h2>
-  <div class="meta">Silhouette • Dramatic • Editorial</div>
-  <p id="p11">
-Strong backlight silhouette portrait, subject partially in shadow,
-cinematic contrast, dramatic fashion editorial.
-  </p>
-  <button onclick="copyPrompt('p11', this)">Kopyala</button>
-</div>
-
-<!-- PROMPT 12 -->
-<div class="prompt">
-  <h2>Close-Up Cinematic Face Portrait</h2>
-  <div class="meta">Portrait • Close-Up • Cinematic</div>
-  <p id="p12">
-Extreme close-up cinematic face portrait, shallow depth of field,
-natural skin texture, dramatic lighting, ultra-realistic photography.
-  </p>
-  <button onclick="copyPrompt('p12', this)">Kopyala</button>
+  <button onclick="copyPrompt('prompt4', this)">Kopyala</button>
+  <div class="copy-hint">Paste into Midjourney / SD / Leonardo</div>
 </div>
 
 <script>
 function copyPrompt(id, btn) {
-  const text = document.getElementById(id).innerText.trim();
-  navigator.clipboard.writeText(text).then(() => {
-    btn.innerText = "Kopyalandı ✅";
-    setTimeout(() => btn.innerText = "Kopyala", 1500);
-  });
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const textarea = document.createElement("textarea");
+  textarea.value = el.innerText.trim();
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+
+  btn.innerText = "Kopyalandı ✅";
+  setTimeout(() => btn.innerText = "Kopyala", 1500);
 }
 </script>
 
