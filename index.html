@@ -13,19 +13,24 @@
     }
     h1 {
       color: #38bdf8;
+      margin-top: 32px;
     }
     .prompt {
       background: #1e293b;
       padding: 15px;
-      margin-bottom: 12px;
+      margin-bottom: 20px;
       border-radius: 8px;
+      line-height: 1.5;
     }
     button {
-      margin-top: 8px;
-      padding: 6px 12px;
+      margin-top: 12px;
+      padding: 6px 14px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -33,58 +38,79 @@
 
 <h1>🎨 AI Image Prompts</h1>
 
+<!-- PROMPT 1 -->
 <div class="prompt">
-  <b>Cyberpunk Girl</b>
-  <p id="prompt1">
-    A cyberpunk girl with neon lights, rainy city, ultra detailed, 4k
-  </p>
-  <button data-target="prompt1">Kopyala</button>
+<p id="prompt1">
+A young man, 180 cm tall and slender, is shown riding a strong, black-haired horse, viewed from a slight front angle (three-quarter front view). Behind him are sweet, beautiful trees and sand on the ground. The camera is positioned to look slightly down on the horse as it moves forward, creating a powerful, confident cinematic atmosphere. The man looks slightly to the side with a calm and fearless expression, his face fully visible.
+He sits upright and balanced, holding the reins naturally while leaning slightly into the horse's forward movement. Muscular and imposing, the thick, wavy-maned horse is captured mid-stride, emphasizing its power and speed.
+He wears a large black shirt with the top buttons open, black fabric trousers, a leather belt, and clean black classic shoes. A thin silver wristwatch reflects the light on his wrist, and sleek rectangular sunglasses with narrow frames complete his modern and stylish look.
+The face must be 100% preserved as provided. No changes to facial structure or identity.
+Strong motion blur in the background, sharp subject and horse, dust particles for realism.
+Image taken with Leica M11. Vintage black-and-white cinematic aesthetic with film grain.
+</p>
+<button data-target="prompt1">Kopyala</button>
 </div>
 
-<h1>Dark Moody Profile Photo</h1>
-
+<!-- PROMPT 2 -->
 <div class="prompt">
-  <p id="prompt2">
-    A dark moody profile photo,
-    low light, emotional expression,
-    soft highlights, deep shadows,
-    cinematic portrait photography
-  </p>
-  <button data-target="prompt2">Kopyala</button>
+<p id="prompt2">
+High-angle editorial street-style photograph taken from a balcony looking down at a stylish man standing on sunlit asphalt.
+Subject slightly left, full body visible, negative space around. Right edge shows cropped glossy black luxury SUV.
+Rough grey asphalt, cobblestones, tree shadows.
+Young adult man, light skin, short moustache, confident expression, looking up. Brown cap with white monogram, black rectangular sunglasses.
+Oversized black leather jacket with tan stitching, white open-collar shirt, beige knit vest, wide grey pleated trousers, white shoes.
+Left hand holding takeaway coffee, right hand touching cap.
+Warm late-afternoon sunlight, cinematic color grading, subtle film grain, no text, no extra people.
+</p>
+<button data-target="prompt2">Kopyala</button>
 </div>
 
-<h1>Fantasy Elf Portrait</h1>
-
+<!-- PROMPT 3 -->
 <div class="prompt">
-  <p id="prompt3">
-    A fantasy elf portrait,
-    mystical atmosphere, soft magical light,
-    detailed facial features,
-    fantasy concept art, cinematic look
-  </p>
-  <button data-target="prompt3">Kopyala</button>
+<p id="prompt3">
+Long-range cinematic portrait of me seated confidently in a classic upholstered armchair. Full body visible, legs crossed, arms resting naturally.
+Black three-piece suit, white shirt, black tie, polished formal shoes.
+Face remains exactly the same as reference. Clean skin, sharp jawline, groomed beard and eyebrows.
+Low-key dramatic lighting, warm highlights, deep shadows.
+Dark vintage interior, luxury mafia-style atmosphere, subtle film grain.
+Camera: eye-level long shot, centered composition, cinematic movie still, ultra-realistic, 4K.
+</p>
+<button data-target="prompt3">Kopyala</button>
 </div>
 
-<h1>Luxury Male Fashion Shoot</h1>
-
+<!-- PROMPT 4 -->
 <div class="prompt">
-  <p id="prompt4">
-    Luxury male fashion shoot,
-    elegant pose, studio lighting,
-    high-end fashion photography,
-    sharp details, editorial style
-  </p>
-  <button data-target="prompt4">Kopyala</button>
+<p id="prompt4">
+Photograph me sitting low on a minimalist metal stool, legs spread forward, feet planted on uneven outdoor terrain.
+One hand holding thin leather reins, shoulders slightly slouched, calm introspective expression.
+Dark oversized layered clothing, wide-leg trousers, leather boots, dark sunglasses.
+Strong black horse stands closely behind, aligned protectively.
+Open natural landscape, rough ground, wild grass, overexposed sky with negative space.
+High contrast lighting, deep blacks, matte texture, monochrome fine-art fashion editorial.
+Medium-format film look, subtle grain. Output quality 1080p without harming image quality.
+</p>
+<button data-target="prompt4">Kopyala</button>
+</div>
+
+<!-- PROMPT 5 -->
+<div class="prompt">
+<p id="prompt5">
+Ultra-realistic black-and-white cinematic photograph, 9:16 vertical frame, full-frame DSLR, 85mm lens, f/1.8.
+A confident stylish man sitting casually on the front left fender of a black Pagani Huayra Roadster.
+Tailored black suit with black shirt slightly unbuttoned, black leather shoes.
+Lighting a cigar, subtle smoke, calm confident expression.
+Face must not change. Natural skin texture, sharp jawline, sunglasses with thin metal frame.
+Glossy Pagani reflections, carbon fiber details, gravel road, dense trees background with cinematic bokeh.
+Soft overcast daylight, dramatic but natural contrast. No distortion, no AI artifacts.
+</p>
+<button data-target="prompt5">Kopyala</button>
 </div>
 
 <script>
 document.querySelectorAll("button[data-target]").forEach(btn => {
   btn.addEventListener("click", async () => {
     const id = btn.getAttribute("data-target");
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    const text = el.innerText.trim();
+    const text = document.getElementById(id).innerText.trim();
 
     try {
       await navigator.clipboard.writeText(text);
