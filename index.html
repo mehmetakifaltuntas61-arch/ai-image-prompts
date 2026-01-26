@@ -76,11 +76,6 @@ h2{
   line-height:1.7;
   max-height:9.8em;
   overflow:hidden;
-  transition:max-height .4s ease;
-}
-
-.prompt-text.expanded{
-  max-height:4000px;
 }
 
 .show-more{
@@ -109,6 +104,17 @@ button{
 .counter{
   font-size:13px;
   color:var(--soft);
+}
+
+textarea{
+  width:100%;
+  min-height:140px;
+  background:#0b1020;
+  color:#fff;
+  border:1px solid #2a3558;
+  border-radius:14px;
+  padding:14px;
+  font-size:14px;
 }
 
 footer{
@@ -356,35 +362,34 @@ Social media optimized.
 </div>
 </div>
 
+<h2>💡 İpucu</h2>
+
+<div class="prompt">
+<div class="prompt-text expanded">
+Bu promptları kullanırken:
+- Kamera açısını mutlaka belirt  
+- Işık türünü net yaz  
+- Arka planı sade tut  
+- “Face identity preserved” gibi koruma cümleleri ekle  
+- Aynı promptu küçük değişikliklerle tekrar dene
+</div>
+</div>
+
+<h2>💬 Sizin Düşünceleriniz</h2>
+
+<div class="prompt">
+<form>
+<textarea placeholder="Görüşlerinizi buraya yazabilirsiniz..."></textarea>
+<div class="actions">
+<button type="submit">Gönder</button>
+<span class="counter">Mesaj gizli gönderilir</span>
+</div>
+</form>
+</div>
+
 </section>
 
 <footer>© 2026 AI Prompt Studio</footer>
 
-<script>
-/* DEVAMINI GÖSTER */
-document.querySelectorAll(".show-more").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const text=btn.previousElementSibling;
-    text.classList.toggle("expanded");
-    btn.innerText=text.classList.contains("expanded")?"Kısalt":"Devamını göster";
-  });
-});
-
-/* KOPYALA */
-document.querySelectorAll(".prompt").forEach(box=>{
-  const btn=box.querySelector("button");
-  const text=box.querySelector(".prompt-text");
-  const counter=box.querySelector(".counter");
-
-  btn.addEventListener("click",()=>{
-    navigator.clipboard.writeText(text.innerText.trim());
-    let n=parseInt(counter.innerText)||0;
-    counter.innerText=(n+1)+" kopyalama";
-    btn.innerText="Kopyalandı ✓";
-    setTimeout(()=>btn.innerText="Kopyala",1400);
-  });
-});
-</script>
-<script src="script.js"></script>
 </body>
 </html>
