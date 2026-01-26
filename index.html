@@ -11,10 +11,7 @@
   --card:#141a2b;
   --gold:#f5c542;
   --accent:#38bdf8;
-  --accent-2:#a855f7;
   --soft:#94a3b8;
-  --glow:#38bdf866;
-  --glow-2:#a855f766;
 }
 
 *{box-sizing:border-box}
@@ -22,9 +19,7 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at top left,#1e293b,#020617),
-    radial-gradient(circle at bottom right,#312e81,#020617);
+  background:radial-gradient(circle at top,#162044,#05070f);
   color:#fff;
   padding:20px;
 }
@@ -36,17 +31,9 @@ header{
 
 header h1{
   font-size:46px;
-  background:linear-gradient(90deg,var(--gold),var(--accent),var(--accent-2));
-  background-size:200% 200%;
-  animation:gradientMove 6s ease infinite;
+  background:linear-gradient(90deg,var(--gold),var(--accent));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-}
-
-@keyframes gradientMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
 }
 
 header .owner{
@@ -77,27 +64,6 @@ h2{
   padding:26px;
   border-radius:22px;
   margin-bottom:30px;
-  transition:transform .4s, box-shadow .4s;
-  position:relative;
-  overflow:hidden;
-}
-
-.prompt::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.06),transparent);
-  opacity:0;
-  transition:.4s;
-}
-
-.prompt:hover::before{
-  opacity:1;
-}
-
-.prompt:hover{
-  transform:translateY(-6px) scale(1.01);
-  box-shadow:0 0 35px var(--glow),0 0 60px var(--glow-2);
 }
 
 .prompt h3{
@@ -110,11 +76,6 @@ h2{
   line-height:1.7;
   max-height:9.8em;
   overflow:hidden;
-  transition:max-height .4s ease;
-}
-
-.prompt-text.expanded{
-  max-height:4000px;
 }
 
 .show-more{
@@ -122,7 +83,6 @@ h2{
   font-size:13px;
   color:var(--accent);
   cursor:pointer;
-  user-select:none;
 }
 
 .actions{
@@ -139,40 +99,11 @@ button{
   cursor:pointer;
   background:linear-gradient(135deg,var(--gold),#ffd966);
   font-weight:bold;
-  transition:transform .2s, box-shadow .2s;
-}
-
-button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 18px var(--gold);
 }
 
 .counter{
   font-size:13px;
   color:var(--soft);
-}
-
-.feedback{
-  background:linear-gradient(145deg,#0f172a,#020617);
-  padding:30px;
-  border-radius:22px;
-  margin-top:80px;
-  box-shadow:0 0 30px #000;
-}
-
-.feedback textarea{
-  width:100%;
-  min-height:120px;
-  background:#020617;
-  border:1px solid #334155;
-  border-radius:14px;
-  padding:14px;
-  color:#fff;
-  font-size:14px;
-}
-
-.feedback button{
-  margin-top:14px;
 }
 
 footer{
@@ -207,9 +138,9 @@ Horse mid-stride, flowing mane.
 Leica M11, cinematic black and white, film grain.
 Face identity must be 100% preserved.
 </div>
-<div class="show-more" data-target="p1">Devamını göster</div>
+<div class="show-more">Devamını göster</div>
 <div class="actions">
-<button data-copy="p1">Kopyala</button>
+<button>Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
 </div>
@@ -225,9 +156,9 @@ Designer outfit, minimal colors.
 Sharp focus, premium magazine style.
 High-end fashion photography.
 </div>
-<div class="show-more" data-target="p2">Devamını göster</div>
+<div class="show-more">Devamını göster</div>
 <div class="actions">
-<button data-copy="p2">Kopyala</button>
+<button>Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
 </div>
@@ -244,9 +175,9 @@ Soft highlights, deep shadows.
 Cinematic portrait photography.
 Natural skin texture.
 </div>
-<div class="show-more" data-target="p3">Devamını göster</div>
+<div class="show-more">Devamını göster</div>
 <div class="actions">
-<button data-copy="p3">Kopyala</button>
+<button>Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
 </div>
@@ -261,47 +192,168 @@ Sharp eyes, realistic reflections.
 Soft gold color grading.
 Face identity strictly preserved.
 </div>
-<div class="show-more" data-target="p4">Devamını göster</div>
+<div class="show-more">Devamını göster</div>
 <div class="actions">
-<button data-copy="p4">Kopyala</button>
+<button>Kopyala</button>
 <span class="counter">0 kopyalama</span>
 </div>
 </div>
 
-<h2>🧠 Sizin Düşünceleriniz</h2>
+<h2>🧝 Fantasy & Concept Art</h2>
 
-<div class="feedback">
-<h3>Geri Bildirim</h3>
-<textarea placeholder="Site hakkında düşüncelerinizi yazın..."></textarea>
-<button>Gönder</button>
+<div class="prompt">
+<h3>Fantasy Elf Portrait</h3>
+<div id="p5" class="prompt-text">
+Fantasy elf portrait.
+Mystical atmosphere.
+Soft magical lighting.
+Detailed facial features.
+Fantasy concept art.
+Cinematic look.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<h2>📱 Social Media Viral Prompts</h2>
+
+<div class="prompt">
+<h3>Instagram Reels Portrait</h3>
+<div id="p6" class="prompt-text">
+Ultra sharp vertical portrait.
+Natural daylight.
+Clean background.
+Eye-catching composition.
+Optimized for Instagram Reels.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Street Photography Style</h3>
+<div id="p7" class="prompt-text">
+Urban street photography.
+Natural candid pose.
+Dynamic city background.
+High contrast.
+Documentary style realism.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>AI Influencer Look</h3>
+<div id="p8" class="prompt-text">
+Modern AI influencer portrait.
+Perfect lighting.
+Stylish outfit.
+Clean aesthetic.
+Social media ready.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Cinematic Night Shot</h3>
+<div id="p9" class="prompt-text">
+Night time cinematic portrait.
+Neon lights.
+Rain reflections.
+Cyberpunk mood.
+High detail.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Minimal Clean Headshot</h3>
+<div id="p10" class="prompt-text">
+Minimal clean headshot.
+White background.
+Soft light.
+Professional look.
+LinkedIn / portfolio style.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<h2>🧠 Yeni Başlayanlar İçin</h2>
+
+<div class="prompt">
+<h3>Beginner Clean Portrait</h3>
+<div id="b1" class="prompt-text">
+Clean portrait photo.
+Single subject.
+Centered composition.
+Soft natural lighting.
+Neutral background.
+No distortion.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Basic Cinematic Prompt</h3>
+<div id="b2" class="prompt-text">
+Cinematic photo.
+Three-quarter angle.
+Balanced lighting.
+Natural colors.
+High realism.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Simple Social Media Prompt</h3>
+<div id="b3" class="prompt-text">
+Vertical portrait.
+Eye contact.
+Clean background.
+Soft bright light.
+Social media optimized.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button>Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
 </div>
 
 </section>
 
 <footer>© 2026 AI Prompt Studio</footer>
-
-<script>
-document.querySelectorAll(".show-more").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const id=btn.getAttribute("data-target");
-    const box=document.getElementById(id);
-    box.classList.toggle("expanded");
-    btn.innerText=box.classList.contains("expanded")?"Kısalt":"Devamını göster";
-  });
-});
-
-document.querySelectorAll("button[data-copy]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const id=btn.getAttribute("data-copy");
-    const text=document.getElementById(id).innerText;
-    navigator.clipboard.writeText(text);
-    const counter=btn.nextElementSibling;
-    counter.innerText=(parseInt(counter.innerText)||0)+1+" kopyalama";
-    btn.innerText="Kopyalandı ✓";
-    setTimeout(()=>btn.innerText="Kopyala",1400);
-  });
-});
-</script>
 
 </body>
 </html>
