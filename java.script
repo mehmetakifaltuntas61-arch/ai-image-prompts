@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* DEVAMINI GÖSTER */
   document.querySelectorAll(".show-more").forEach(function(btn){
     btn.addEventListener("click", function(){
       const text = btn.previousElementSibling;
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* KOPYALA */
   document.querySelectorAll(".prompt").forEach(function(box){
     const btn = box.querySelector("button");
     const text = box.querySelector(".prompt-text");
@@ -34,4 +32,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-}); 
+});
