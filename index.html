@@ -14,13 +14,15 @@
   --soft:#94a3b8;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   background:radial-gradient(circle at top,#162044,#05070f);
-  color:#fff;
+  color:#ffffff;
   padding:20px;
 }
 
@@ -76,6 +78,7 @@ h2{
   line-height:1.7;
   max-height:9.8em;
   overflow:hidden;
+  transition:max-height .4s ease;
 }
 
 .prompt-text.expanded{
@@ -87,6 +90,7 @@ h2{
   font-size:13px;
   color:var(--accent);
   cursor:pointer;
+  user-select:none;
 }
 
 .actions{
@@ -110,17 +114,6 @@ button{
   color:var(--soft);
 }
 
-textarea{
-  width:100%;
-  min-height:140px;
-  background:#0b1020;
-  color:#fff;
-  border:1px solid #2a3558;
-  border-radius:14px;
-  padding:14px;
-  font-size:14px;
-}
-
 footer{
   margin-top:100px;
   text-align:center;
@@ -142,8 +135,8 @@ footer{
 <h2>🎬 Cinematic & Editorial</h2>
 
 <div class="prompt">
-<h3>Cinematic Horse Editorial (B&W)</h3>
-<div id="p1" class="prompt-text">
+  <h3>Cinematic Horse Editorial (B&W)</h3>
+  <div class="prompt-text">
 A young man riding a strong black horse, three-quarter front view.
 Sweet trees in the background, sandy ground.
 Confident posture, face fully visible.
@@ -152,17 +145,17 @@ Thin silver watch, narrow sunglasses.
 Horse mid-stride, flowing mane.
 Leica M11, cinematic black and white, film grain.
 Face identity must be 100% preserved.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>Luxury Male Fashion Shoot</h3>
-<div id="p2" class="prompt-text">
+  <h3>Luxury Male Fashion Shoot</h3>
+  <div class="prompt-text">
 Luxury male fashion editorial.
 Clean studio background.
 Soft top light, subtle shadows.
@@ -170,225 +163,208 @@ Confident masculine pose.
 Designer outfit, minimal colors.
 Sharp focus, premium magazine style.
 High-end fashion photography.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <h2>📸 Portrait & Profile</h2>
 
 <div class="prompt">
-<h3>Dark Moody Profile Photo</h3>
-<div id="p3" class="prompt-text">
+  <h3>Dark Moody Profile Photo</h3>
+  <div class="prompt-text">
 Dark moody profile photo.
 Low light environment.
 Emotional expression.
 Soft highlights, deep shadows.
 Cinematic portrait photography.
 Natural skin texture.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>Ultra Realistic Studio Portrait</h3>
-<div id="p4" class="prompt-text">
+  <h3>Ultra Realistic Studio Portrait</h3>
+  <div class="prompt-text">
 Ultra realistic studio portrait.
 85mm lens look.
 Natural skin texture.
 Sharp eyes, realistic reflections.
 Soft gold color grading.
 Face identity strictly preserved.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <h2>🧝 Fantasy & Concept Art</h2>
 
 <div class="prompt">
-<h3>Fantasy Elf Portrait</h3>
-<div id="p5" class="prompt-text">
+  <h3>Fantasy Elf Portrait</h3>
+  <div class="prompt-text">
 Fantasy elf portrait.
 Mystical atmosphere.
 Soft magical lighting.
 Detailed facial features.
 Fantasy concept art.
 Cinematic look.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <h2>📱 Social Media Viral Prompts</h2>
 
 <div class="prompt">
-<h3>Instagram Reels Portrait</h3>
-<div id="p6" class="prompt-text">
+  <h3>Instagram Reels Portrait</h3>
+  <div class="prompt-text">
 Ultra sharp vertical portrait.
 Natural daylight.
 Clean background.
 Eye-catching composition.
 Optimized for Instagram Reels.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>Street Photography Style</h3>
-<div id="p7" class="prompt-text">
+  <h3>Street Photography Style</h3>
+  <div class="prompt-text">
 Urban street photography.
 Natural candid pose.
 Dynamic city background.
 High contrast.
 Documentary style realism.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>AI Influencer Look</h3>
-<div id="p8" class="prompt-text">
+  <h3>AI Influencer Look</h3>
+  <div class="prompt-text">
 Modern AI influencer portrait.
 Perfect lighting.
 Stylish outfit.
 Clean aesthetic.
 Social media ready.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>Cinematic Night Shot</h3>
-<div id="p9" class="prompt-text">
+  <h3>Cinematic Night Shot</h3>
+  <div class="prompt-text">
 Night time cinematic portrait.
 Neon lights.
 Rain reflections.
 Cyberpunk mood.
 High detail.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>Minimal Clean Headshot</h3>
-<div id="p10" class="prompt-text">
+  <h3>Minimal Clean Headshot</h3>
+  <div class="prompt-text">
 Minimal clean headshot.
 White background.
 Soft light.
 Professional look.
 LinkedIn / portfolio style.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <h2>🧠 Yeni Başlayanlar İçin</h2>
 
 <div class="prompt">
-<h3>Beginner Clean Portrait</h3>
-<div id="b1" class="prompt-text">
+  <h3>Beginner Clean Portrait</h3>
+  <div class="prompt-text">
 Clean portrait photo.
 Single subject.
 Centered composition.
 Soft natural lighting.
 Neutral background.
 No distortion.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>Basic Cinematic Prompt</h3>
-<div id="b2" class="prompt-text">
+  <h3>Basic Cinematic Prompt</h3>
+  <div class="prompt-text">
 Cinematic photo.
 Three-quarter angle.
 Balanced lighting.
 Natural colors.
 High realism.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 <div class="prompt">
-<h3>Simple Social Media Prompt</h3>
-<div id="b3" class="prompt-text">
+  <h3>Simple Social Media Prompt</h3>
+  <div class="prompt-text">
 Vertical portrait.
 Eye contact.
 Clean background.
 Soft bright light.
 Social media optimized.
-</div>
-<div class="show-more">Devamını göster</div>
-<div class="actions">
-<button>Kopyala</button>
-<span class="counter">0 kopyalama</span>
-</div>
-</div>
-
-<h2>💬 Sizin Düşünceleriniz</h2>
-
-<div class="prompt">
-<form id="feedbackForm">
-<textarea id="message" placeholder="Görüşlerinizi buraya yazabilirsiniz..." required></textarea>
-<div class="actions">
-<button type="submit">Gönder</button>
-<span class="counter" id="formStatus">Mesaj gizli gönderilir</span>
-</div>
-</form>
+  </div>
+  <div class="show-more">Devamını göster</div>
+  <div class="actions">
+    <button>Kopyala</button>
+    <span class="counter">0 kopyalama</span>
+  </div>
 </div>
 
 </section>
 
 <footer>© 2026 AI Prompt Studio</footer>
 
-<!-- EMAILJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-(function(){
-  emailjs.init("PUBLIC_KEY_BURAYA");
-})();
-</script>
+<!-- SADECE HARİCİ JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
