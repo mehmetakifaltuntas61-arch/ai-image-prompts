@@ -19,83 +19,103 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:#05070f;
+  background:radial-gradient(circle at top,#162044,#05070f);
   color:#fff;
   padding:20px;
 }
 
 header{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:70px;
 }
 
 header h1{
-  font-size:42px;
+  font-size:46px;
   background:linear-gradient(90deg,var(--gold),var(--accent));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 header .owner{
-  font-size:28px;
+  margin-top:10px;
+  font-size:34px;
   font-weight:900;
   color:#ff4d4d;
+  letter-spacing:3px;
 }
 
 section{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
 }
 
+h2{
+  margin:80px 0 30px;
+  font-size:26px;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  border-left:5px solid var(--gold);
+  padding-left:15px;
+}
+
 .prompt{
-  background:var(--card);
-  padding:24px;
-  border-radius:18px;
-  margin-bottom:26px;
+  background:linear-gradient(145deg,#141a2b,#0e1424);
+  padding:26px;
+  border-radius:22px;
+  margin-bottom:30px;
 }
 
 .prompt h3{
-  margin-bottom:12px;
+  margin:0 0 14px;
   color:var(--gold);
 }
 
 .prompt-text{
   white-space:pre-line;
-  line-height:1.6;
-  max-height:9em;
+  line-height:1.7;
+  max-height:9.8em;
   overflow:hidden;
+  transition:max-height .4s ease;
 }
 
 .prompt-text.expanded{
-  max-height:none;
+  max-height:4000px;
 }
 
 .show-more{
-  margin-top:8px;
+  margin-top:10px;
+  font-size:13px;
   color:var(--accent);
   cursor:pointer;
-  font-size:13px;
 }
 
 .actions{
-  margin-top:14px;
+  margin-top:16px;
   display:flex;
   gap:14px;
   align-items:center;
 }
 
-button{
-  padding:10px 20px;
+button.copy-btn{
+  padding:10px 22px;
   border:none;
-  border-radius:12px;
-  background:var(--gold);
-  font-weight:bold;
+  border-radius:14px;
   cursor:pointer;
+  background:linear-gradient(135deg,var(--gold),#ffd966);
+  font-weight:bold;
 }
 
 .counter{
   font-size:13px;
   color:var(--soft);
+}
+
+footer{
+  margin-top:100px;
+  text-align:center;
+  color:#64748b;
+  font-size:14px;
 }
 </style>
 </head>
@@ -109,13 +129,73 @@ button{
 
 <section>
 
-<!-- PROMPT 1 -->
+<h2>🎬 Cinematic & Editorial</h2>
+
 <div class="prompt">
-<h3>Cinematic Horse Editorial</h3>
+<h3>Cinematic Horse Editorial (B&W)</h3>
 <div class="prompt-text">
 A young man riding a strong black horse.
 Three-quarter front view.
-Cinematic composition.
+Sweet trees in the background.
+Sandy ground.
+Confident posture, face fully visible.
+Black outfit, classic shoes.
+Leica M11 look.
+Cinematic black and white.
+Film grain.
+Face identity must be preserved.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button class="copy-btn">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Luxury Male Fashion Shoot</h3>
+<div class="prompt-text">
+Luxury male fashion editorial.
+Clean studio background.
+Soft top light.
+Designer outfit.
+High-end magazine style.
+Sharp focus.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button class="copy-btn">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<h2>📸 Portrait & Profile</h2>
+
+<div class="prompt">
+<h3>Dark Moody Profile</h3>
+<div class="prompt-text">
+Dark moody profile portrait.
+Low key lighting.
+Emotional expression.
+Soft highlights.
+Deep shadows.
+Cinematic portrait.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button class="copy-btn">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Ultra Realistic Studio Portrait</h3>
+<div class="prompt-text">
+Ultra realistic studio portrait.
+85mm lens look.
+Natural skin texture.
+Sharp eyes.
+Soft gold color grading.
 Face identity preserved.
 </div>
 <div class="show-more">Devamını göster</div>
@@ -125,13 +205,17 @@ Face identity preserved.
 </div>
 </div>
 
-<!-- PROMPT 2 -->
+<h2>🧝 Fantasy & Concept Art</h2>
+
 <div class="prompt">
-<h3>Luxury Fashion Portrait</h3>
+<h3>Fantasy Elf Portrait</h3>
 <div class="prompt-text">
-Luxury male fashion editorial.
-Studio lighting.
-High-end magazine style.
+Fantasy elf portrait.
+Mystical atmosphere.
+Magical lighting.
+Detailed facial features.
+Fantasy concept art.
+Cinematic look.
 </div>
 <div class="show-more">Devamını göster</div>
 <div class="actions">
@@ -140,13 +224,16 @@ High-end magazine style.
 </div>
 </div>
 
-<!-- PROMPT 3 -->
+<h2>📱 Social Media Viral</h2>
+
 <div class="prompt">
-<h3>Dark Moody Portrait</h3>
+<h3>Instagram Reels Portrait</h3>
 <div class="prompt-text">
-Dark cinematic portrait.
-Low key lighting.
-Emotional expression.
+Ultra sharp vertical portrait.
+Natural daylight.
+Clean background.
+Eye-catching composition.
+Instagram Reels optimized.
 </div>
 <div class="show-more">Devamını göster</div>
 <div class="actions">
@@ -155,13 +242,14 @@ Emotional expression.
 </div>
 </div>
 
-<!-- PROMPT 4 -->
 <div class="prompt">
-<h3>Ultra Realistic Headshot</h3>
+<h3>Street Photography Style</h3>
 <div class="prompt-text">
-Ultra realistic studio portrait.
-Sharp eyes.
-Natural skin texture.
+Urban street photography.
+Natural candid pose.
+Dynamic city background.
+High contrast.
+Documentary realism.
 </div>
 <div class="show-more">Devamını göster</div>
 <div class="actions">
@@ -170,13 +258,14 @@ Natural skin texture.
 </div>
 </div>
 
-<!-- PROMPT 5 -->
 <div class="prompt">
-<h3>Street Photography</h3>
+<h3>AI Influencer Look</h3>
 <div class="prompt-text">
-Urban street portrait.
-Candid pose.
-Natural city light.
+Modern AI influencer portrait.
+Perfect lighting.
+Stylish outfit.
+Clean aesthetic.
+Social media ready.
 </div>
 <div class="show-more">Devamını göster</div>
 <div class="actions">
@@ -185,13 +274,81 @@ Natural city light.
 </div>
 </div>
 
-<!-- PROMPT 6 -->
+<div class="prompt">
+<h3>Cinematic Night Shot</h3>
+<div class="prompt-text">
+Night time cinematic portrait.
+Neon lights.
+Rain reflections.
+Cyberpunk mood.
+High detail.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button class="copy-btn">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
 <div class="prompt">
 <h3>Minimal Clean Headshot</h3>
 <div class="prompt-text">
-Minimal clean portrait.
+Minimal clean headshot.
 White background.
+Soft light.
 Professional look.
+Portfolio / LinkedIn style.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button class="copy-btn">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<h2>🧠 Yeni Başlayanlar İçin</h2>
+
+<div class="prompt">
+<h3>Beginner Clean Portrait</h3>
+<div class="prompt-text">
+Clean portrait photo.
+Single subject.
+Centered composition.
+Soft natural light.
+Neutral background.
+No distortion.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button class="copy-btn">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Basic Cinematic Prompt</h3>
+<div class="prompt-text">
+Cinematic photo.
+Three-quarter angle.
+Balanced lighting.
+Natural colors.
+High realism.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions">
+<button class="copy-btn">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<div class="prompt">
+<h3>Simple Social Media Prompt</h3>
+<div class="prompt-text">
+Vertical portrait.
+Eye contact.
+Clean background.
+Soft bright light.
+Social media optimized.
 </div>
 <div class="show-more">Devamını göster</div>
 <div class="actions">
@@ -202,6 +359,10 @@ Professional look.
 
 </section>
 
+<footer>© 2026 AI Prompt Studio</footer>
+
+<!-- SADECE HARİCİ JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
