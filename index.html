@@ -78,6 +78,10 @@ h2{
   overflow:hidden;
 }
 
+.prompt-text.expanded{
+  max-height:4000px;
+}
+
 .show-more{
   margin-top:10px;
   font-size:13px;
@@ -362,27 +366,14 @@ Social media optimized.
 </div>
 </div>
 
-<h2>💡 İpucu</h2>
-
-<div class="prompt">
-<div class="prompt-text expanded">
-Bu promptları kullanırken:
-- Kamera açısını mutlaka belirt  
-- Işık türünü net yaz  
-- Arka planı sade tut  
-- “Face identity preserved” gibi koruma cümleleri ekle  
-- Aynı promptu küçük değişikliklerle tekrar dene
-</div>
-</div>
-
 <h2>💬 Sizin Düşünceleriniz</h2>
 
 <div class="prompt">
-<form>
-<textarea placeholder="Görüşlerinizi buraya yazabilirsiniz..."></textarea>
+<form id="feedbackForm">
+<textarea id="message" placeholder="Görüşlerinizi buraya yazabilirsiniz..." required></textarea>
 <div class="actions">
 <button type="submit">Gönder</button>
-<span class="counter">Mesaj gizli gönderilir</span>
+<span class="counter" id="formStatus">Mesaj gizli gönderilir</span>
 </div>
 </form>
 </div>
@@ -390,6 +381,14 @@ Bu promptları kullanırken:
 </section>
 
 <footer>© 2026 AI Prompt Studio</footer>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init("PUBLIC_KEY_BURAYA");
+})();
+</script>
 
 </body>
 </html>
