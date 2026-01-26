@@ -117,7 +117,6 @@ textarea{
   border-radius:14px;
   padding:14px;
   font-size:14px;
-  resize:vertical;
 }
 
 footer{
@@ -234,57 +233,124 @@ Cinematic look.
 
 <h2>📱 Social Media Viral Prompts</h2>
 
-<div class="prompt"><h3>Instagram Reels Portrait</h3><div id="p6" class="prompt-text">
+<div class="prompt">
+<h3>Instagram Reels Portrait</h3>
+<div id="p6" class="prompt-text">
 Ultra sharp vertical portrait.
 Natural daylight.
 Clean background.
 Eye-catching composition.
 Optimized for Instagram Reels.
-</div><div class="show-more" onclick="toggleText(this,'p6')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p6',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+</div>
+<div class="show-more" onclick="toggleText(this,'p6')">Devamını göster</div>
+<div class="actions">
+<button onclick="copyPrompt('p6',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
 
-<div class="prompt"><h3>Street Photography Style</h3><div id="p7" class="prompt-text">
+<div class="prompt">
+<h3>Street Photography Style</h3>
+<div id="p7" class="prompt-text">
 Urban street photography.
 Natural candid pose.
 Dynamic city background.
 High contrast.
 Documentary style realism.
-</div><div class="show-more" onclick="toggleText(this,'p7')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p7',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+</div>
+<div class="show-more" onclick="toggleText(this,'p7')">Devamını göster</div>
+<div class="actions">
+<button onclick="copyPrompt('p7',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
 
-<div class="prompt"><h3>AI Influencer Look</h3><div id="p8" class="prompt-text">
+<div class="prompt">
+<h3>AI Influencer Look</h3>
+<div id="p8" class="prompt-text">
 Modern AI influencer portrait.
 Perfect lighting.
 Stylish outfit.
 Clean aesthetic.
 Social media ready.
-</div><div class="show-more" onclick="toggleText(this,'p8')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p8',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+</div>
+<div class="show-more" onclick="toggleText(this,'p8')">Devamını göster</div>
+<div class="actions">
+<button onclick="copyPrompt('p8',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
 
-<div class="prompt"><h3>Cinematic Night Shot</h3><div id="p9" class="prompt-text">
+<div class="prompt">
+<h3>Cinematic Night Shot</h3>
+<div id="p9" class="prompt-text">
 Night time cinematic portrait.
 Neon lights.
 Rain reflections.
 Cyberpunk mood.
 High detail.
-</div><div class="show-more" onclick="toggleText(this,'p9')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p9',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+</div>
+<div class="show-more" onclick="toggleText(this,'p9')">Devamını göster</div>
+<div class="actions">
+<button onclick="copyPrompt('p9',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
 
-<div class="prompt"><h3>Minimal Clean Headshot</h3><div id="p10" class="prompt-text">
+<div class="prompt">
+<h3>Minimal Clean Headshot</h3>
+<div id="p10" class="prompt-text">
 Minimal clean headshot.
 White background.
 Soft light.
 Professional look.
 LinkedIn / portfolio style.
-</div><div class="show-more" onclick="toggleText(this,'p10')">Devamını göster</div><div class="actions"><button onclick="copyPrompt('p10',this)">Kopyala</button><span class="counter">0 kopyalama</span></div></div>
+</div>
+<div class="show-more" onclick="toggleText(this,'p10')">Devamını göster</div>
+<div class="actions">
+<button onclick="copyPrompt('p10',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+</div>
+</div>
+
+<!-- 🔽 YENİ EKLENEN BÖLÜMLER 🔽 -->
+
+<h2>🧠 Yeni Başlayanlar İçin</h2>
+<div class="prompt">
+<div class="prompt-text expanded">
+Net yaz, kısa yaz, detay ver.
+Aynı promptu birkaç kez dene.
+Işık + açı + duygu sonucu belirler.
+</div>
+</div>
+
+<h2>⭐ Bu Promptlar Neden İşe Yarıyor?</h2>
+<div class="prompt">
+<div class="prompt-text expanded">
+Bu promptlar AI’ın en iyi anladığı yapıdadır.
+Sosyal medya ve sinematik üretime uygundur.
+Test edilmiştir.
+</div>
+</div>
+
+<div class="prompt" style="border:2px dashed var(--gold)">
+<div class="prompt-text expanded">
+📌 İpucu:  
+Aynı promptu herkes kullanabilir  
+ama farkı detaylar yaratır.
+</div>
+</div>
 
 <h2>💬 Sizin Düşünceleriniz</h2>
 
 <div class="prompt">
-  <h3>Site hakkında ne düşünüyorsunuz?</h3>
-  <form id="feedbackForm">
-    <textarea id="message" placeholder="Görüşünüzü buraya yazabilirsiniz..." required></textarea>
-    <div class="actions">
-      <button type="submit">Gönder</button>
-      <span class="counter" id="feedbackStatus">Mesaj gizli gönderilir</span>
-    </div>
-  </form>
+<form id="feedbackForm">
+<textarea id="message" placeholder="Görüşünüzü buraya yazabilirsiniz..." required></textarea>
+<div class="actions">
+<button type="submit">Gönder</button>
+<span class="counter" id="feedbackStatus">Mesaj gizli gönderilir</span>
+</div>
+</form>
 </div>
 
 </section>
@@ -309,9 +375,9 @@ function copyPrompt(id,btn){
   setTimeout(()=>btn.innerText="Kopyala",1400);
 }
 
-document.getElementById("feedbackForm").addEventListener("submit", function(e){
+document.getElementById("feedbackForm").addEventListener("submit",function(e){
   e.preventDefault();
-  document.getElementById("feedbackStatus").innerText="Teşekkürler! Mesajınız alındı ✓";
+  document.getElementById("feedbackStatus").innerText="Teşekkürler! Mesaj alındı ✓";
   document.getElementById("message").value="";
 });
 </script>
