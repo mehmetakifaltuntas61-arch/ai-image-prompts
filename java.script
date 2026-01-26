@@ -1,56 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ==========================
-     DEVAMINI GÖSTER / KISALT
-  ========================== */
-  document.querySelectorAll(".show-more").forEach(function (btn) {
+  var showButtons = document.querySelectorAll(".show-more");
 
+  showButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
 
-      const promptBox = btn.closest(".prompt");
+      var promptBox = btn.closest(".prompt");
       if (!promptBox) return;
 
-      const text = promptBox.querySelector(".prompt-text");
+      var text = promptBox.querySelector(".prompt-text");
       if (!text) return;
 
-      text.classList.toggle("expanded");
-
       if (text.classList.contains("expanded")) {
-        btn.innerText = "Kısalt";
-      } else {
+        text.classList.remove("expanded");
         btn.innerText = "Devamını göster";
+      } else {
+        text.classList.add("expanded");
+        btn.innerText = "Kısalt";
       }
 
     });
-
   });
 
-  /* ==========================
-           KOPYALA
-  ========================== */
-  document.querySelectorAll(".prompt").forEach(function (box) {
+  var prompts = document.querySelectorAll(".prompt");
 
-    const btn = box.querySelector("button");
-    const text = box.querySelector(".prompt-text");
-    const counter = box.querySelector(".counter");
+  prompts.forEach(function (box) {
 
-    if (!btn || !text || !counter) return;
+    var button = box.querySelector("button");
+    var text = box.querySelector(".prompt-text");
+    var counter = box.querySelector(".counter");
 
-    btn.addEventListener("click", function () {
+    if (!button || !text || !counter) return;
 
-      const content = text.innerText.trim();
-      if (!content) return;
+    button.addEventListener("click", function () {
 
+      var content = text.innerText;
       navigator.clipboard.writeText(content);
 
-      let current = parseInt(counter.innerText) || 0;
-      counter.innerText = (current + 1) + " kopyalama";
+      var number = parseInt(counter.innerText) || 0;
+      counter.innerText = (number + 1) + " kopyalama";
 
-      const oldText = btn.innerText;
-      btn.innerText = "Kopyalandı ✓";
+      button.innerText = "Kopyalandı ✓";
 
       setTimeout(function () {
-        btn.innerText = oldText;
+        button.innerText = "Kopyala";
       }, 1400);
 
     });
