@@ -1,51 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  var showButtons = document.querySelectorAll(".show-more");
+  document.querySelectorAll(".prompt").forEach(function (prompt) {
 
-  showButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
+    var showMore = prompt.querySelector(".show-more");
+    var text = prompt.querySelector(".prompt-text");
+    var copyBtn = prompt.querySelector(".copy-btn");
+    var counter = prompt.querySelector(".counter");
 
-      var promptBox = btn.closest(".prompt");
-      if (!promptBox) return;
-
-      var text = promptBox.querySelector(".prompt-text");
-      if (!text) return;
-
-      if (text.classList.contains("expanded")) {
-        text.classList.remove("expanded");
-        btn.innerText = "Devamını göster";
-      } else {
-        text.classList.add("expanded");
-        btn.innerText = "Kısalt";
-      }
-
+    // DEVAMINI GÖSTER
+    showMore.addEventListener("click", function () {
+      text.classList.toggle("expanded");
+      showMore.textContent = text.classList.contains("expanded")
+        ? "Kısalt"
+        : "Devamını göster";
     });
-  });
 
-  var prompts = document.querySelectorAll(".prompt");
+    // KOPYALA
+    copyBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(text.innerText);
 
-  prompts.forEach(function (box) {
+      var count = parseInt(counter.innerText) || 0;
+      counter.innerText = (count + 1) + " kopyalama";
 
-    var button = box.querySelector("button");
-    var text = box.querySelector(".prompt-text");
-    var counter = box.querySelector(".counter");
-
-    if (!button || !text || !counter) return;
-
-    button.addEventListener("click", function () {
-
-      var content = text.innerText;
-      navigator.clipboard.writeText(content);
-
-      var number = parseInt(counter.innerText) || 0;
-      counter.innerText = (number + 1) + " kopyalama";
-
-      button.innerText = "Kopyalandı ✓";
-
+      copyBtn.textContent = "Kopyalandı ✓";
       setTimeout(function () {
-        button.innerText = "Kopyala";
-      }, 1400);
-
+        copyBtn.textContent = "Kopyala";
+      }, 1200);
     });
 
   });
