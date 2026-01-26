@@ -1,15 +1,37 @@
-function copyPrompt(button) {
-  const promptText = button
-    .closest(".prompt-card")
-    .querySelector(".prompt-text")
-    .innerText;
+document.addEventListener("DOMContentLoaded", function () {
 
-  navigator.clipboard.writeText(promptText).then(() => {
-    const originalText = button.innerText;
-    button.innerText = "Kopyalandı ✅";
+  /* DEVAMINI GÖSTER */
+  document.querySelectorAll(".show-more").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      const text = btn.previousElementSibling;
+      if (!text) return;
 
-    setTimeout(() => {
-      button.innerText = originalText;
-    }, 1500);
+      text.classList.toggle("expanded");
+      btn.innerText = text.classList.contains("expanded")
+        ? "Kısalt"
+        : "Devamını göster";
+    });
   });
-}
+
+  /* KOPYALA */
+  document.querySelectorAll(".prompt").forEach(function(box){
+    const btn = box.querySelector("button");
+    const text = box.querySelector(".prompt-text");
+    const counter = box.querySelector(".counter");
+
+    if (!btn || !text || !counter) return;
+
+    btn.addEventListener("click", function(){
+      navigator.clipboard.writeText(text.innerText.trim());
+
+      let current = parseInt(counter.innerText) || 0;
+      counter.innerText = (current + 1) + " kopyalama";
+
+      btn.innerText = "Kopyalandı ✓";
+      setTimeout(function(){
+        btn.innerText = "Kopyala";
+      }, 1400);
+    });
+  });
+
+});
