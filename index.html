@@ -76,6 +76,11 @@ h2{
   line-height:1.7;
   max-height:9.8em;
   overflow:hidden;
+  transition:max-height .4s ease;
+}
+
+.prompt-text.expanded{
+  max-height:4000px;
 }
 
 .show-more{
@@ -354,6 +359,32 @@ Social media optimized.
 </section>
 
 <footer>© 2026 AI Prompt Studio</footer>
+
+<script>
+/* DEVAMINI GÖSTER */
+document.querySelectorAll(".show-more").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const text=btn.previousElementSibling;
+    text.classList.toggle("expanded");
+    btn.innerText=text.classList.contains("expanded")?"Kısalt":"Devamını göster";
+  });
+});
+
+/* KOPYALA */
+document.querySelectorAll(".prompt").forEach(box=>{
+  const btn=box.querySelector("button");
+  const text=box.querySelector(".prompt-text");
+  const counter=box.querySelector(".counter");
+
+  btn.addEventListener("click",()=>{
+    navigator.clipboard.writeText(text.innerText.trim());
+    let n=parseInt(counter.innerText)||0;
+    counter.innerText=(n+1)+" kopyalama";
+    btn.innerText="Kopyalandı ✓";
+    setTimeout(()=>btn.innerText="Kopyala",1400);
+  });
+});
+</script>
 
 </body>
 </html>
