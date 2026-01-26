@@ -1,30 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  document.querySelectorAll(".prompt").forEach(function (prompt) {
+  document.querySelectorAll(".prompt").forEach(prompt => {
 
-    var showMore = prompt.querySelector(".show-more");
-    var text = prompt.querySelector(".prompt-text");
-    var copyBtn = prompt.querySelector(".copy-btn");
-    var counter = prompt.querySelector(".counter");
+    const text = prompt.querySelector(".prompt-text");
+    const showMore = prompt.querySelector(".show-more");
+    const copyBtn = prompt.querySelector(".copy-btn");
+    const counter = prompt.querySelector(".counter");
 
     // DEVAMINI GÖSTER
-    showMore.addEventListener("click", function () {
+    showMore.addEventListener("click", () => {
       text.classList.toggle("expanded");
-      showMore.textContent = text.classList.contains("expanded")
+      showMore.innerText = text.classList.contains("expanded")
         ? "Kısalt"
         : "Devamını göster";
     });
 
     // KOPYALA
-    copyBtn.addEventListener("click", function () {
+    copyBtn.addEventListener("click", () => {
       navigator.clipboard.writeText(text.innerText);
 
-      var count = parseInt(counter.innerText) || 0;
+      let count = parseInt(counter.innerText) || 0;
       counter.innerText = (count + 1) + " kopyalama";
 
-      copyBtn.textContent = "Kopyalandı ✓";
-      setTimeout(function () {
-        copyBtn.textContent = "Kopyala";
+      copyBtn.innerText = "Kopyalandı ✓";
+      setTimeout(() => {
+        copyBtn.innerText = "Kopyala";
       }, 1200);
     });
 
