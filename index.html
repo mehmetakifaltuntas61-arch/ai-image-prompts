@@ -53,22 +53,6 @@ h2{
   color:var(--accent);
   border-left:5px solid var(--gold);
   padding-left:15px;
-  position:relative;
-}
-
-h2::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:2px;
-  background:var(--gold);
-  transition:width .6s ease;
-}
-
-h2:hover::after{
-  width:220px;
 }
 
 .prompt{
@@ -76,13 +60,21 @@ h2:hover::after{
   padding:26px;
   border-radius:20px;
   margin-bottom:28px;
-  transition:all .35s ease;
+  transition:.35s ease;
   position:relative;
 }
 
 .prompt:hover{
   transform:translateY(-6px);
   box-shadow:0 0 35px rgba(212,175,55,.25);
+}
+
+.prompt-number{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font-size:12px;
+  color:var(--soft);
 }
 
 .prompt h3{
@@ -101,14 +93,6 @@ h2:hover::after{
   color:var(--accent);
 }
 
-.prompt-number{
-  position:absolute;
-  top:18px;
-  right:22px;
-  font-size:12px;
-  color:var(--soft);
-}
-
 .prompt-text{
   white-space:pre-line;
   line-height:1.7;
@@ -117,9 +101,7 @@ h2:hover::after{
   transition:max-height .4s ease;
 }
 
-.prompt-text.expanded{
-  max-height:4000px;
-}
+.prompt-text.expanded{max-height:4000px}
 
 .show-more{
   margin-top:10px;
@@ -135,9 +117,7 @@ h2:hover::after{
   display:none;
 }
 
-.tip.show{
-  display:block;
-}
+.tip.show{display:block}
 
 .actions{
   margin-top:16px;
@@ -169,13 +149,6 @@ footer{
   font-size:14px;
 }
 
-footer .brand{
-  margin-top:10px;
-  font-size:13px;
-  color:#94a3b8;
-  font-style:italic;
-}
-
 .toast{
   position:fixed;
   bottom:30px;
@@ -185,10 +158,8 @@ footer .brand{
   color:#fff;
   padding:12px 20px;
   border-radius:14px;
-  font-size:14px;
   opacity:0;
-  pointer-events:none;
-  transition:opacity .4s ease, bottom .4s ease;
+  transition:.4s;
 }
 
 .toast.show{
@@ -209,7 +180,8 @@ footer .brand{
 
 <h2>🎬 Cinematic & Editorial</h2>
 
-<div class="prompt" id="prompt1">
+<!-- 1 -->
+<div class="prompt">
 <span class="prompt-number">#Prompt01</span>
 <h3>Cinematic Horse Editorial <span class="badge">CINEMATIC</span></h3>
 <div id="p1" class="prompt-text">
@@ -225,21 +197,206 @@ Face identity must be 100% preserved.
 <div class="show-more" onclick="toggleText(this,'p1')">Devamını göster</div>
 <div class="tip">📌 Midjourney · Leonardo · SDXL uyumlu</div>
 <div class="actions">
-<button onclick="copyPrompt('p1')">Kopyala</button>
+<button onclick="copyPrompt('p1',this)">Kopyala</button>
 <span class="counter">0 kopyalama</span>
 <button onclick="toggleTip(this)">İpucu</button>
 </div>
 </div>
 
-<!-- DİĞER PROMPTLAR: SİSTEM AYNI ŞEKİLDE DEVAM EDER -->
-<!-- Mevcut 10 promptun TAMAMI bu yapı ile devam eder, hiçbiri kısaltılmadı -->
+<!-- 2 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt02</span>
+<h3>Luxury Male Fashion <span class="badge">FASHION</span></h3>
+<div id="p2" class="prompt-text">
+Luxury male fashion editorial.
+Clean studio background.
+Soft top light, subtle shadows.
+Confident masculine pose.
+Designer outfit, minimal colors.
+Sharp focus, premium magazine style.
+High-end fashion photography.
+</div>
+<div class="show-more" onclick="toggleText(this,'p2')">Devamını göster</div>
+<div class="tip">📌 Editorial fashion shoot</div>
+<div class="actions">
+<button onclick="copyPrompt('p2',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<h2>📸 Portrait & Profile</h2>
+
+<!-- 3 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt03</span>
+<h3>Dark Moody Profile <span class="badge">PORTRAIT</span></h3>
+<div id="p3" class="prompt-text">
+Dark moody profile photo.
+Low light environment.
+Emotional expression.
+Soft highlights, deep shadows.
+Cinematic portrait photography.
+Natural skin texture.
+</div>
+<div class="show-more" onclick="toggleText(this,'p3')">Devamını göster</div>
+<div class="tip">📌 Düşük ışıkta güçlü duygu</div>
+<div class="actions">
+<button onclick="copyPrompt('p3',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt04</span>
+<h3>Ultra Realistic Portrait <span class="badge">REALISM</span></h3>
+<div id="p4" class="prompt-text">
+Ultra realistic studio portrait.
+85mm lens look.
+Natural skin texture.
+Sharp eyes, realistic reflections.
+Soft gold color grading.
+Face identity strictly preserved.
+</div>
+<div class="show-more" onclick="toggleText(this,'p4')">Devamını göster</div>
+<div class="tip">📌 Kimlik koruma odaklı</div>
+<div class="actions">
+<button onclick="copyPrompt('p4',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<h2>🧝 Fantasy & Concept</h2>
+
+<!-- 5 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt05</span>
+<h3>Fantasy Elf Portrait <span class="badge">FANTASY</span></h3>
+<div id="p5" class="prompt-text">
+Fantasy elf portrait.
+Mystical atmosphere.
+Soft magical lighting.
+Detailed facial features.
+Fantasy concept art.
+Cinematic look.
+</div>
+<div class="show-more" onclick="toggleText(this,'p5')">Devamını göster</div>
+<div class="tip">📌 Concept art & fantasy</div>
+<div class="actions">
+<button onclick="copyPrompt('p5',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<h2>📱 Social Media Viral</h2>
+
+<!-- 6 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt06</span>
+<h3>Instagram Reels Portrait <span class="badge">VIRAL</span></h3>
+<div id="p6" class="prompt-text">
+Ultra sharp vertical portrait.
+Natural daylight.
+Clean background.
+Eye-catching composition.
+Optimized for Instagram Reels.
+</div>
+<div class="show-more" onclick="toggleText(this,'p6')">Devamını göster</div>
+<div class="tip">📌 9:16 oran önerilir</div>
+<div class="actions">
+<button onclick="copyPrompt('p6',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt07</span>
+<h3>Street Photography <span class="badge">STREET</span></h3>
+<div id="p7" class="prompt-text">
+Urban street photography.
+Natural candid pose.
+Dynamic city background.
+High contrast.
+Documentary style realism.
+</div>
+<div class="show-more" onclick="toggleText(this,'p7')">Devamını göster</div>
+<div class="tip">📌 Doğal ve spontane sahne</div>
+<div class="actions">
+<button onclick="copyPrompt('p7',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt08</span>
+<h3>AI Influencer Look <span class="badge">SOCIAL</span></h3>
+<div id="p8" class="prompt-text">
+Modern AI influencer portrait.
+Perfect lighting.
+Stylish outfit.
+Clean aesthetic.
+Social media ready.
+</div>
+<div class="show-more" onclick="toggleText(this,'p8')">Devamını göster</div>
+<div class="tip">📌 Influencer estetiği</div>
+<div class="actions">
+<button onclick="copyPrompt('p8',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt09</span>
+<h3>Cinematic Night Shot <span class="badge">NIGHT</span></h3>
+<div id="p9" class="prompt-text">
+Night time cinematic portrait.
+Neon lights.
+Rain reflections.
+Cyberpunk mood.
+High detail.
+</div>
+<div class="show-more" onclick="toggleText(this,'p9')">Devamını göster</div>
+<div class="tip">📌 Neon & yağmur efekti</div>
+<div class="actions">
+<button onclick="copyPrompt('p9',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="prompt">
+<span class="prompt-number">#Prompt10</span>
+<h3>Minimal Clean Headshot <span class="badge">PRO</span></h3>
+<div id="p10" class="prompt-text">
+Minimal clean headshot.
+White background.
+Soft light.
+Professional look.
+LinkedIn / portfolio style.
+</div>
+<div class="show-more" onclick="toggleText(this,'p10')">Devamını göster</div>
+<div class="tip">📌 CV & LinkedIn için ideal</div>
+<div class="actions">
+<button onclick="copyPrompt('p10',this)">Kopyala</button>
+<span class="counter">0 kopyalama</span>
+<button onclick="toggleTip(this)">İpucu</button>
+</div>
+</div>
 
 </section>
 
-<footer>
-© 2026 AI Prompt Studio
-<div class="brand">Crafted prompts for creators who take AI seriously.</div>
-</footer>
+<footer>© 2026 AI Prompt Studio</footer>
 
 <div id="toast" class="toast">✅ Prompt panoya kopyalandı</div>
 
@@ -251,25 +408,18 @@ function toggleText(el,id){
 }
 
 function toggleTip(btn){
-  const tip=btn.parentElement.previousElementSibling;
-  tip.classList.toggle("show");
+  btn.parentElement.previousElementSibling.classList.toggle("show");
 }
 
-function copyPrompt(id){
-  const text=document.getElementById(id).innerText.trim();
-  navigator.clipboard.writeText(text);
+function copyPrompt(id,btn){
+  navigator.clipboard.writeText(document.getElementById(id).innerText);
   showToast();
 }
 
 function showToast(){
   const t=document.getElementById("toast");
   t.classList.add("show");
-  setTimeout(()=>t.classList.remove("show"),1800);
-}
-
-if(location.hash){
-  const el=document.querySelector(location.hash);
-  if(el) el.scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>t.classList.remove("show"),1600);
 }
 </script>
 
