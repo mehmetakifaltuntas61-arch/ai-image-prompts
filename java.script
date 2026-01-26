@@ -35,3 +35,34 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("feedbackForm");
+  const status = document.getElementById("formStatus");
+
+  if (!form) return;
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const message = document.getElementById("message").value.trim();
+    if (!message) return;
+
+    status.innerText = "Gönderiliyor...";
+
+    emailjs.send(
+      "SERVICE_ID_BURAYA",
+      "TEMPLATE_ID_BURAYA",
+      {
+        message: message
+      }
+    ).then(function(){
+      status.innerText = "Mesaj başarıyla gönderildi ✓";
+      form.reset();
+    }, function(){
+      status.innerText = "Hata oluştu, tekrar deneyin";
+    });
+
+  });
+
+});
