@@ -9,9 +9,12 @@
 :root{
   --bg:#0b0f1a;
   --card:#141a2b;
-  --gold:#d4af37;
+  --gold:#f5c542;
   --accent:#38bdf8;
+  --accent-2:#a855f7;
   --soft:#94a3b8;
+  --glow:#38bdf866;
+  --glow-2:#a855f766;
 }
 
 *{box-sizing:border-box}
@@ -19,28 +22,39 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:radial-gradient(circle at top, #11172a, #05070f);
+  background:
+    radial-gradient(circle at top left,#1e293b,#020617),
+    radial-gradient(circle at bottom right,#312e81,#020617);
   color:#fff;
   padding:20px;
 }
 
 header{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:70px;
 }
 
 header h1{
-  font-size:42px;
-  color:var(--gold);
-  margin:0;
+  font-size:46px;
+  background:linear-gradient(90deg,var(--gold),var(--accent),var(--accent-2));
+  background-size:200% 200%;
+  animation:gradientMove 6s ease infinite;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 header .owner{
   margin-top:10px;
-  font-size:36px;
+  font-size:34px;
   font-weight:900;
   color:#ff4d4d;
-  letter-spacing:2px;
+  letter-spacing:3px;
 }
 
 section{
@@ -49,17 +63,41 @@ section{
 }
 
 h2{
-  margin:70px 0 30px;
-  color:var(--accent);
+  margin:80px 0 30px;
+  font-size:26px;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
   border-left:5px solid var(--gold);
   padding-left:15px;
 }
 
 .prompt{
-  background:var(--card);
+  background:linear-gradient(145deg,#141a2b,#0e1424);
   padding:26px;
-  border-radius:20px;
-  margin-bottom:28px;
+  border-radius:22px;
+  margin-bottom:30px;
+  transition:transform .4s, box-shadow .4s;
+  position:relative;
+  overflow:hidden;
+}
+
+.prompt::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.06),transparent);
+  opacity:0;
+  transition:.4s;
+}
+
+.prompt:hover::before{
+  opacity:1;
+}
+
+.prompt:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 0 35px var(--glow),0 0 60px var(--glow-2);
 }
 
 .prompt h3{
@@ -98,9 +136,14 @@ button{
   border:none;
   border-radius:14px;
   cursor:pointer;
-  background:var(--gold);
-  color:#000;
+  background:linear-gradient(135deg,var(--gold),#ffd966);
   font-weight:bold;
+  transition:transform .2s, box-shadow .2s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 18px var(--gold);
 }
 
 .counter{
@@ -108,19 +151,8 @@ button{
   color:var(--soft);
 }
 
-textarea{
-  width:100%;
-  min-height:140px;
-  background:#0b1020;
-  color:#fff;
-  border:1px solid #2a3558;
-  border-radius:14px;
-  padding:14px;
-  font-size:14px;
-}
-
 footer{
-  margin-top:90px;
+  margin-top:100px;
   text-align:center;
   color:#64748b;
   font-size:14px;
@@ -313,19 +345,17 @@ LinkedIn / portfolio style.
 </div>
 </div>
 
-<!-- YENİ EKLENEN PROMPTLAR (AZ ÖNCEKİ DOSYANDAN AYNI) -->
-
 <h2>🧠 Yeni Başlayanlar İçin</h2>
 
 <div class="prompt">
-<h3>Beginner Clean Portrait Prompt</h3>
+<h3>Beginner Clean Portrait</h3>
 <div id="b1" class="prompt-text">
 Clean portrait photo.
-Single subject, centered composition.
+Single subject.
+Centered composition.
 Soft natural lighting.
 Neutral background.
-Sharp focus, realistic skin texture.
-No distortion, no extra limbs.
+No distortion.
 </div>
 <div class="show-more" onclick="toggleText(this,'b1')">Devamını göster</div>
 <div class="actions">
@@ -339,9 +369,8 @@ No distortion, no extra limbs.
 <div id="b2" class="prompt-text">
 Cinematic photo.
 Three-quarter angle.
-Strong light contrast.
+Balanced lighting.
 Natural colors.
-Professional camera look.
 High realism.
 </div>
 <div class="show-more" onclick="toggleText(this,'b2')">Devamını göster</div>
@@ -355,10 +384,10 @@ High realism.
 <h3>Simple Social Media Prompt</h3>
 <div id="b3" class="prompt-text">
 Vertical portrait.
-Eye contact with camera.
+Eye contact.
 Clean background.
-Bright but soft light.
-Optimized for social media.
+Soft bright light.
+Social media optimized.
 </div>
 <div class="show-more" onclick="toggleText(this,'b3')">Devamını göster</div>
 <div class="actions">
@@ -367,23 +396,9 @@ Optimized for social media.
 </div>
 </div>
 
-<h2>💬 Sizin Düşünceleriniz</h2>
-
-<div class="prompt">
-<form id="feedbackForm">
-<textarea id="message" placeholder="Görüşünüzü buraya yazabilirsiniz..." required></textarea>
-<div class="actions">
-<button type="submit">Gönder</button>
-<span class="counter" id="feedbackStatus">Mesaj gizli gönderilir</span>
-</div>
-</form>
-</div>
-
 </section>
 
-<footer>
-© 2026 AI Prompt Studio
-</footer>
+<footer>© 2026 AI Prompt Studio</footer>
 
 <script>
 function toggleText(el,id){
@@ -393,19 +408,12 @@ function toggleText(el,id){
 }
 
 function copyPrompt(id,btn){
-  const text=document.getElementById(id).innerText.trim();
-  navigator.clipboard.writeText(text);
+  navigator.clipboard.writeText(document.getElementById(id).innerText);
   const counter=btn.nextElementSibling;
   counter.innerText=(parseInt(counter.innerText)||0)+1+" kopyalama";
   btn.innerText="Kopyalandı ✓";
   setTimeout(()=>btn.innerText="Kopyala",1400);
 }
-
-document.getElementById("feedbackForm").addEventListener("submit",function(e){
-  e.preventDefault();
-  document.getElementById("feedbackStatus").innerText="Teşekkürler! Mesaj alındı ✓";
-  document.getElementById("message").value="";
-});
 </script>
 
 </body>
