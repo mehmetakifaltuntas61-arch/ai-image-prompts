@@ -60,19 +60,15 @@ setTimeout(function () {
   });
 
 });
-/* =========================
-   🌙 MOD TOGGLE (EK KOD)
-   ========================= */
-
-document.addEventListener("DOMContentLoaded", function () {
+/* 🌙 MOD TOGGLE – HATA DAYANIKLI */
+(function () {
   const modeBtn = document.getElementById("modeToggle");
   if (!modeBtn) return;
 
-  modeBtn.addEventListener("click", function () {
+  modeBtn.onclick = function () {
     document.body.classList.toggle("light");
-
     modeBtn.textContent = document.body.classList.contains("light")
       ? "🌞 Mod"
       : "🌙 Mod";
-  });
-});
+  };
+})();
