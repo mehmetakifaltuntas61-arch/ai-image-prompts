@@ -74,26 +74,18 @@ if (modeBtn) {
       modeBtn.textContent = "🌙 Mod";
     }
   });
-}
-document.addEventListener("DOMContentLoaded", () => {
+}document.addEventListener("DOMContentLoaded", function () {
 
-  const modeBtn = document.getElementById("modeToggle");
+  const btn = document.getElementById("modeToggle");
+  console.log("buton:", btn);
 
-  if (!modeBtn) {
-    console.log("❌ modeToggle butonu bulunamadı");
-    return;
-  }
+  if (!btn) return;
 
-  console.log("✅ modeToggle bulundu");
-
-  modeBtn.addEventListener("click", () => {
+  btn.onclick = function () {
     document.body.classList.toggle("light");
-
-    if (document.body.classList.contains("light")) {
-      modeBtn.textContent = "🌞 Mod";
-    } else {
-      modeBtn.textContent = "🌙 Mod";
-    }
-  });
+    btn.textContent = document.body.classList.contains("light")
+      ? "🌞 Mod"
+      : "🌙 Mod";
+  };
 
 });
