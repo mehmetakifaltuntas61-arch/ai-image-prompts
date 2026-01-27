@@ -1,4 +1,3 @@
-alert("script.js çalışıyor");
 document.addEventListener("DOMContentLoaded", function () {
 
   // ==============================
