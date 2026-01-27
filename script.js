@@ -1,3 +1,4 @@
+alert("JS ÇALIŞIYOR");
 document.addEventListener("DOMContentLoaded", function () {
 
   // ==============================
