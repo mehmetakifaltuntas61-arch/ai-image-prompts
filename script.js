@@ -61,3 +61,17 @@ setTimeout(function () {
   });
 
 });
+const modeBtn = document.getElementById("modeToggle");
+
+if (modeBtn) {
+  modeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+
+    // yazıyı da değiştir
+    if (document.body.classList.contains("light")) {
+      modeBtn.textContent = "🌞 Mod";
+    } else {
+      modeBtn.textContent = "🌙 Mod";
+    }
+  });
+}
