@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const text = prompt.querySelector(".prompt-text");
 
     button.addEventListener("click", function () {
+const prompt = button.closest(".prompt");
+
+prompt.classList.add("shake");
+setTimeout(function () {
+  prompt.classList.remove("shake");
+}, 300);
 
       // Eski yöntem (her yerde çalışır)
       const textarea = document.createElement("textarea");
