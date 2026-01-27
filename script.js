@@ -1,42 +1,56 @@
-// =====================================
-// DEVAMINI GÖSTER / GİZLE
-// =====================================
-const showMoreButtons = document.querySelectorAll(".show-more");
+document.addEventListener("DOMContentLoaded", function () {
 
-showMoreButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const text = btn.previousElementSibling;
-    text.classList.toggle("expanded");
+  // ==============================
+  // DEVAMINI GÖSTER / GİZLE
+  // ==============================
+  const showMoreButtons = document.querySelectorAll(".show-more");
 
-    btn.innerText = text.classList.contains("expanded")
-      ? "Gizle"
-      : "Devamını göster";
+  showMoreButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const text = btn.previousElementSibling;
+
+      text.classList.toggle("expanded");
+
+      if (text.classList.contains("expanded")) {
+        btn.innerText = "Gizle";
+      } else {
+        btn.innerText = "Devamını göster";
+      }
+    });
   });
-});
 
 
-// =====================================
-// KOPYALA BUTONU (SADECE KOPYALAMA)
-// =====================================
-const prompts = document.querySelectorAll(".prompt");
+  // ==============================
+  // KOPYALA BUTONU (GARANTİLİ)
+  // ==============================
+  const prompts = document.querySelectorAll(".prompt");
 
-prompts.forEach(prompt => {
-  const button = prompt.querySelector(".copy-btn");
-  const text = prompt.querySelector(".prompt-text");
+  prompts.forEach(function (prompt) {
+    const button = prompt.querySelector(".copy-btn");
+    const text = prompt.querySelector(".prompt-text");
 
-  button.addEventListener("click", () => {
-    navigator.clipboard.writeText(text.innerText);
+    button.addEventListener("click", function () {
 
-    // Kısa geri bildirim
-    const oldText = button.innerText;
-    button.innerText = "Kopyalandı ✓";
+      // Eski yöntem (her yerde çalışır)
+      const textarea = document.createElement("textarea");
+      textarea.value = text.innerText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
 
-    if (navigator.vibrate) {
-      navigator.vibrate(30);
-    }
+      // Görsel geri bildirim
+      const oldText = button.innerText;
+      button.innerText = "Kopyalandı ✓";
 
-    setTimeout(() => {
-      button.innerText = oldText;
-    }, 1200);
+      if (navigator.vibrate) {
+        navigator.vibrate(30);
+      }
+
+      setTimeout(function () {
+        button.innerText = oldText;
+      }, 1200);
+    });
   });
+
 });
