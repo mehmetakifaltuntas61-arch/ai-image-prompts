@@ -69,6 +69,9 @@ h2{
 .prompt h3{
   margin:0 0 14px;
   color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
 .prompt-text{
@@ -117,6 +120,42 @@ footer{
   color:#64748b;
   font-size:14px;
 }
+
+/* ❔ TOOLTIP ÖZELLİĞİ */
+.info-tooltip{
+  position:relative;
+  cursor:pointer;
+  font-size:14px;
+  color:#94a3b8;
+}
+
+.info-tooltip:hover{
+  color:#fff;
+}
+
+.tooltip-text{
+  visibility:hidden;
+  opacity:0;
+  width:260px;
+  background:#0b0f1a;
+  color:#fff;
+  padding:10px 12px;
+  border-radius:10px;
+  position:absolute;
+  bottom:130%;
+  left:50%;
+  transform:translateX(-50%);
+  transition:opacity .2s ease;
+  font-size:13px;
+  line-height:1.5;
+  z-index:20;
+}
+
+.info-tooltip:hover .tooltip-text{
+  visibility:visible;
+  opacity:1;
+}
+
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-2px); }
@@ -128,10 +167,12 @@ footer{
 .prompt.shake {
   animation: shake 0.3s;
 }
+
 .prompt:active {
   box-shadow: 0 0 18px rgba(56,189,248,0.6);
   transform: scale(0.99);
 }
+
 body.light {
   background: #f8fafc;
   color: #0f172a;
@@ -154,8 +195,7 @@ body.light header h1 {
 <header>
   <h1>AI Prompt Studio</h1>
   <div class="owner">M.AKİF</div>
-   <button id="modeToggle">🌙 Mod</button>
-</button>
+  <button id="modeToggle">🌙 Mod</button>
 </header>
 
 <section>
@@ -163,7 +203,12 @@ body.light header h1 {
 <h2>🎬 Cinematic & Editorial</h2>
 
 <div class="prompt">
-<h3>Cinematic Horse Editorial (B&W)</h3>
+<h3>
+Cinematic Horse Editorial (B&W)
+<span class="info-tooltip">❔
+<span class="tooltip-text">Sinematik kamera açısı, ışık ve yüz tutarlılığı için optimize edilmiştir.</span>
+</span>
+</h3>
 <div class="prompt-text">
 A young man riding a strong black horse.
 Three-quarter front view.
@@ -183,7 +228,12 @@ Face identity must be preserved.
 </div>
 
 <div class="prompt">
-<h3>Luxury Male Fashion Shoot</h3>
+<h3>
+Luxury Male Fashion Shoot
+<span class="info-tooltip">❔
+<span class="tooltip-text">Moda çekimleri ve dergi kapakları için uygundur.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Luxury male fashion editorial.
 Clean studio background.
@@ -201,7 +251,12 @@ Sharp focus.
 <h2>📸 Portrait & Profile</h2>
 
 <div class="prompt">
-<h3>Dark Moody Profile</h3>
+<h3>
+Dark Moody Profile
+<span class="info-tooltip">❔
+<span class="tooltip-text">Duygusal ve karanlık portreler için idealdir.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Dark moody profile portrait.
 Low key lighting.
@@ -217,7 +272,12 @@ Cinematic portrait.
 </div>
 
 <div class="prompt">
-<h3>Ultra Realistic Studio Portrait</h3>
+<h3>
+Ultra Realistic Studio Portrait
+<span class="info-tooltip">❔
+<span class="tooltip-text">Gerçekçi cilt dokusu ve profesyonel stüdyo hissi verir.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Ultra realistic studio portrait.
 85mm lens look.
@@ -235,7 +295,12 @@ Face identity preserved.
 <h2>🧝 Fantasy & Concept Art</h2>
 
 <div class="prompt">
-<h3>Fantasy Elf Portrait</h3>
+<h3>
+Fantasy Elf Portrait
+<span class="info-tooltip">❔
+<span class="tooltip-text">Fantastik karakter ve konsept tasarımlar için.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Fantasy elf portrait.
 Mystical atmosphere.
@@ -253,7 +318,12 @@ Cinematic look.
 <h2>📱 Social Media Viral</h2>
 
 <div class="prompt">
-<h3>Instagram Reels Portrait</h3>
+<h3>
+Instagram Reels Portrait
+<span class="info-tooltip">❔
+<span class="tooltip-text">Instagram ve kısa video platformları için optimize edilmiştir.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Ultra sharp vertical portrait.
 Natural daylight.
@@ -268,7 +338,12 @@ Instagram Reels optimized.
 </div>
 
 <div class="prompt">
-<h3>Street Photography Style</h3>
+<h3>
+Street Photography Style
+<span class="info-tooltip">❔
+<span class="tooltip-text">Belgesel ve doğal sokak fotoğrafı tarzı için.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Urban street photography.
 Natural candid pose.
@@ -283,7 +358,12 @@ Documentary realism.
 </div>
 
 <div class="prompt">
-<h3>AI Influencer Look</h3>
+<h3>
+AI Influencer Look
+<span class="info-tooltip">❔
+<span class="tooltip-text">Sosyal medya influencer estetiği için.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Modern AI influencer portrait.
 Perfect lighting.
@@ -298,7 +378,12 @@ Social media ready.
 </div>
 
 <div class="prompt">
-<h3>Cinematic Night Shot</h3>
+<h3>
+Cinematic Night Shot
+<span class="info-tooltip">❔
+<span class="tooltip-text">Gece çekimleri ve neon ışık efektleri için.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Night time cinematic portrait.
 Neon lights.
@@ -313,7 +398,12 @@ High detail.
 </div>
 
 <div class="prompt">
-<h3>Minimal Clean Headshot</h3>
+<h3>
+Minimal Clean Headshot
+<span class="info-tooltip">❔
+<span class="tooltip-text">LinkedIn ve portföy fotoğrafları için.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Minimal clean headshot.
 White background.
@@ -330,7 +420,12 @@ Portfolio / LinkedIn style.
 <h2>🧠 Yeni Başlayanlar İçin</h2>
 
 <div class="prompt">
-<h3>Beginner Clean Portrait</h3>
+<h3>
+Beginner Clean Portrait
+<span class="info-tooltip">❔
+<span class="tooltip-text">AI’a yeni başlayanlar için sade ve risksiz.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Clean portrait photo.
 Single subject.
@@ -341,12 +436,17 @@ No distortion.
 </div>
 <div class="show-more">Devamını göster</div>
 <div class="actions">
-  <button class="copy-btn">Kopyala</button>
+<button class="copy-btn">Kopyala</button>
 </div>
 </div>
 
 <div class="prompt">
-<h3>Basic Cinematic Prompt</h3>
+<h3>
+Basic Cinematic Prompt
+<span class="info-tooltip">❔
+<span class="tooltip-text">Basit sinematik fotoğraflar için.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Cinematic photo.
 Three-quarter angle.
@@ -361,7 +461,12 @@ High realism.
 </div>
 
 <div class="prompt">
-<h3>Simple Social Media Prompt</h3>
+<h3>
+Simple Social Media Prompt
+<span class="info-tooltip">❔
+<span class="tooltip-text">Hızlı sosyal medya içerikleri için.</span>
+</span>
+</h3>
 <div class="prompt-text">
 Vertical portrait.
 Eye contact.
@@ -379,7 +484,6 @@ Social media optimized.
 
 <footer>© 2026 AI Prompt Studio</footer>
 
-<!-- SADECE HARİCİ JS -->
 <script src="script.js"></script>
 
 </body>
