@@ -64,7 +64,6 @@ h2{
   padding:26px;
   border-radius:22px;
   margin-bottom:30px;
-  position: relative;
 }
 
 .prompt h3{
@@ -96,9 +95,6 @@ h2{
 
 .actions{
   margin-top:16px;
-  display:flex;
-  gap:14px;
-  align-items:center;
 }
 
 button.copy-btn{
@@ -110,30 +106,11 @@ button.copy-btn{
   font-weight:bold;
 }
 
-.counter{
-  font-size:13px;
-  color:var(--soft);
-}
-
-footer{
-  margin-top:100px;
-  text-align:center;
-  color:#64748b;
-  font-size:14px;
-}
-
-/* ❔ TOOLTIP ÖZELLİĞİ — DÜZELTİLMİŞ */
 .info-tooltip{
   position:relative;
   cursor:pointer;
   font-size:14px;
   color:#94a3b8;
-  display:inline-flex;
-  align-items:center;
-}
-
-.info-tooltip:hover{
-  color:#fff;
 }
 
 .tooltip-text{
@@ -142,54 +119,20 @@ footer{
   width:260px;
   background:#0b0f1a;
   color:#fff;
-  padding:10px 12px;
+  padding:10px;
   border-radius:10px;
   position:absolute;
   bottom:130%;
   left:50%;
   transform:translateX(-50%);
-  transition:opacity .2s ease;
+  transition:.2s;
   font-size:13px;
-  line-height:1.5;
-  z-index:9999;
+  z-index:20;
 }
 
-.info-tooltip:hover .tooltip-text,
-.info-tooltip:active .tooltip-text{
+.info-tooltip:hover .tooltip-text{
   visibility:visible;
   opacity:1;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  50% { transform: translateX(2px); }
-  75% { transform: translateX(-2px); }
-  100% { transform: translateX(0); }
-}
-
-.prompt.shake {
-  animation: shake 0.3s;
-}
-
-.prompt:active {
-  box-shadow: 0 0 18px rgba(56,189,248,0.6);
-  transform: scale(0.99);
-}
-
-body.light {
-  background: #f8fafc;
-  color: #0f172a;
-}
-
-body.light .prompt {
-  background: #ffffff;
-  color: #0f172a;
-}
-
-body.light header h1 {
-  -webkit-text-fill-color: initial;
-  color: #0f172a;
 }
 </style>
 </head>
@@ -199,18 +142,17 @@ body.light header h1 {
 <header>
   <h1>AI Prompt Studio</h1>
   <div class="owner">M.AKİF</div>
-  <button id="modeToggle">🌙 Mod</button>
 </header>
 
 <section>
 
 <h2>🎬 Cinematic & Editorial</h2>
 
+<!-- 1 -->
 <div class="prompt">
-<h3>
-Cinematic Horse Editorial (B&W)
+<h3>Cinematic Horse Editorial (B&W)
 <span class="info-tooltip">❔
-<span class="tooltip-text">Sinematik kamera açısı, ışık ve yüz tutarlılığı için optimize edilmiştir.</span>
+<span class="tooltip-text">Sinematik kamera açısı, ışık ve yüz tutarlılığı.</span>
 </span>
 </h3>
 <div class="prompt-text">
@@ -226,18 +168,194 @@ Film grain.
 Face identity must be preserved.
 </div>
 <div class="show-more">Devamını göster</div>
-<div class="actions">
-<button class="copy-btn">Kopyala</button>
-</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
 </div>
 
-<!-- DİĞER PROMPTLAR AYNI ŞEKİLDE DEVAM EDİYOR – DEĞİŞMEDİ -->
+<!-- 2 -->
+<div class="prompt">
+<h3>Luxury Male Fashion Shoot</h3>
+<div class="prompt-text">
+Luxury male fashion editorial.
+Clean studio background.
+Soft top light.
+Designer outfit.
+High-end magazine style.
+Sharp focus.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<h2>📸 Portrait & Profile</h2>
+
+<!-- 3 -->
+<div class="prompt">
+<h3>Dark Moody Profile</h3>
+<div class="prompt-text">
+Dark moody profile portrait.
+Low key lighting.
+Emotional expression.
+Soft highlights.
+Deep shadows.
+Cinematic portrait.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<!-- 4 -->
+<div class="prompt">
+<h3>Ultra Realistic Studio Portrait</h3>
+<div class="prompt-text">
+Ultra realistic studio portrait.
+85mm lens look.
+Natural skin texture.
+Sharp eyes.
+Soft gold color grading.
+Face identity preserved.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<h2>🧝 Fantasy & Concept Art</h2>
+
+<!-- 5 -->
+<div class="prompt">
+<h3>Fantasy Elf Portrait</h3>
+<div class="prompt-text">
+Fantasy elf portrait.
+Mystical atmosphere.
+Magical lighting.
+Detailed facial features.
+Fantasy concept art.
+Cinematic look.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<h2>📱 Social Media Viral</h2>
+
+<!-- 6 -->
+<div class="prompt">
+<h3>Instagram Reels Portrait</h3>
+<div class="prompt-text">
+Ultra sharp vertical portrait.
+Natural daylight.
+Clean background.
+Eye-catching composition.
+Instagram Reels optimized.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<!-- 7 -->
+<div class="prompt">
+<h3>Street Photography Style</h3>
+<div class="prompt-text">
+Urban street photography.
+Natural candid pose.
+Dynamic city background.
+High contrast.
+Documentary realism.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<!-- 8 -->
+<div class="prompt">
+<h3>AI Influencer Look</h3>
+<div class="prompt-text">
+Modern AI influencer portrait.
+Perfect lighting.
+Stylish outfit.
+Clean aesthetic.
+Social media ready.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<!-- 9 -->
+<div class="prompt">
+<h3>Cinematic Night Shot</h3>
+<div class="prompt-text">
+Night time cinematic portrait.
+Neon lights.
+Rain reflections.
+Cyberpunk mood.
+High detail.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<!-- 10 -->
+<div class="prompt">
+<h3>Minimal Clean Headshot</h3>
+<div class="prompt-text">
+Minimal clean headshot.
+White background.
+Soft light.
+Professional look.
+Portfolio / LinkedIn style.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<h2>🧠 Yeni Başlayanlar İçin</h2>
+
+<!-- 11 -->
+<div class="prompt">
+<h3>Beginner Clean Portrait</h3>
+<div class="prompt-text">
+Clean portrait photo.
+Single subject.
+Centered composition.
+Soft natural light.
+Neutral background.
+No distortion.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<!-- 12 -->
+<div class="prompt">
+<h3>Basic Cinematic Prompt</h3>
+<div class="prompt-text">
+Cinematic photo.
+Three-quarter angle.
+Balanced lighting.
+Natural colors.
+High realism.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
+
+<!-- 13 -->
+<div class="prompt">
+<h3>Simple Social Media Prompt</h3>
+<div class="prompt-text">
+Vertical portrait.
+Eye contact.
+Clean background.
+Soft bright light.
+Social media optimized.
+</div>
+<div class="show-more">Devamını göster</div>
+<div class="actions"><button class="copy-btn">Kopyala</button></div>
+</div>
 
 </section>
 
 <footer>© 2026 AI Prompt Studio</footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
